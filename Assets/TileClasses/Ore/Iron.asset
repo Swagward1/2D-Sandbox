@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0389744643b8f2e4086093884cffe957, type: 3}
+  m_Name: Iron
+  m_EditorClassIdentifier: 
+  tileName: Iron
+  wallVariant: {fileID: 11400000, guid: 3dc35095f6c62da41bb4d3f95cd2c7de, type: 2}
+  tileSprites:
+  - {fileID: 21300000, guid: da4ff2449a1b08b438b5c80abfcf9a49, type: 3}
+  - {fileID: 21300000, guid: 08d4d760040e4b24fb22d10521a3b4a6, type: 3}
+  inBackdrop: 0
+  tileDrop: {fileID: 11400000}
+  toolToBreak: 0
+  naturallyPlaced: 1
+  isStackable: 1
