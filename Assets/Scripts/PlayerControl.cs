@@ -139,10 +139,12 @@ public class PlayerControl : MonoBehaviour
         
         if(Vector2.Distance(transform.position, mousePos) <= playerReach)
         {
-            if(hit == true)
-                Debug.Log("hit");
+            if(hit)
+            {
+                Debug.Log(hit);
                 //terrainGenerator.RemoveTile(mousePos.x, mousePos.y); //not needed
                 terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+            }
         }
 
         mousePos.x = Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - .5f);

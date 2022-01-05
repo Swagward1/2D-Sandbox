@@ -63,7 +63,7 @@ public class WorldGen : MonoBehaviour
 
         //initilise light
         worldTilesMap = new Texture2D (worldSize, worldSize);
-        worldTilesMap.filterMode = FilterMode.Point; //disable to have smooth lighting
+        //worldTilesMap.filterMode = FilterMode.Point; //disable to have smooth lighting
         lightShader.SetTexture("_ShadowTex", worldTilesMap);
 
         for (int x = 0; x < worldSize; x++)
@@ -444,7 +444,7 @@ public class WorldGen : MonoBehaviour
             
 
             Destroy(GetObjectTileFromWorld(x, y));
-            RemoveObjectTileFromWorld(x, y);
+            RemoveObjectFromWorld(x, y);
 
         }
     }
@@ -547,6 +547,9 @@ public class WorldGen : MonoBehaviour
             newTile.transform.position = new Vector2(x + .5f, y + .5f);
 
             TileClass newTileClass = TileClass.CreateInstance(tile, isNaturallyPlaced);
+
+            AddObjectToWorld(x, y, newTile, newTileClass);
+            AddTileToWorld(x, y, newTileClass);
         }
     }
 
@@ -586,7 +589,7 @@ public class WorldGen : MonoBehaviour
         }
     }
 
-    void RemoveObjectTileFromWorld(int x, int y)
+    void RemoveObjectFromWorld(int x, int y)
     {
         if(world_SceneObjects[x, y] != null)
         {
