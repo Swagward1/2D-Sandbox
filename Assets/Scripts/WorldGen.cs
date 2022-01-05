@@ -63,7 +63,7 @@ public class WorldGen : MonoBehaviour
 
         //initilise light
         worldTilesMap = new Texture2D (worldSize, worldSize);
-        worldTilesMap.filterMode = FilterMode.Point; //disable to have smooth lighting
+        //worldTilesMap.filterMode = FilterMode.Point; //disable to have smooth lighting
         lightShader.SetTexture("_ShadowTex", worldTilesMap);
 
         for (int x = 0; x < worldSize; x++)
@@ -111,12 +111,12 @@ public class WorldGen : MonoBehaviour
         mainCam.worldSize = worldSize;
         player.Spawn();
 
-        RefreshChunks();
+        //RefreshChunks();
     }
 
     void Update()
     {
-        RefreshChunks();
+        //RefreshChunks();
 
     }
 
