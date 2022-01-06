@@ -21,6 +21,7 @@ public class WorldGen : MonoBehaviour
 
     [Header("World Stuff")]
     public TileAtlas tileAtlas;
+    public TileClass placeableTile;
     public float seed;
     public BiomeClass[] biomes;
 
@@ -63,7 +64,10 @@ public class WorldGen : MonoBehaviour
 
         //initilise light
         worldTilesMap = new Texture2D (worldSize, worldSize);
-        //worldTilesMap.filterMode = FilterMode.Point; //disable to have smooth lighting
+        
+        //enable for blocky lighting, disable for blended lighting.
+        worldTilesMap.filterMode = FilterMode.Point;
+        
         lightShader.SetTexture("_ShadowTex", worldTilesMap);
 
         for (int x = 0; x < worldSize; x++)
@@ -76,7 +80,7 @@ public class WorldGen : MonoBehaviour
         worldTilesMap.Apply();
         
         //terrain stuff
-        seed = Random.Range(-32767, 32767);
+        seed = Random.Range(-10000, 10000);
         //Debug.Log("World Seed = " + seed);
         
         for (int i = 0; i < ores.Length; i++)
@@ -111,13 +115,12 @@ public class WorldGen : MonoBehaviour
         mainCam.worldSize = worldSize;
         player.Spawn();
 
-        //RefreshChunks();
+        RefreshChunks();
     }
 
     void Update()
     {
-        //RefreshChunks();
-
+        RefreshChunks();
     }
 
     void RefreshChunks()
@@ -513,7 +516,7 @@ public class WorldGen : MonoBehaviour
             GameObject newTile = new GameObject();
             int chunkCoord = Mathf.RoundToInt(Mathf.Round(x / chunkSize) * chunkSize);
             chunkCoord /= chunkSize;
-  
+
             newTile.transform.parent = worldChunks[chunkCoord].transform;
 
             newTile.AddComponent<SpriteRenderer>();
@@ -522,11 +525,11 @@ public class WorldGen : MonoBehaviour
             newTile.GetComponent<SpriteRenderer>().sprite = tile.tileSprites[spriteIndex];
 
             worldTilesMap.SetPixel(x, y, Color.black);
-            if(tile.inBackdrop)
+            if (tile.inBackdrop)
             {
                 newTile.GetComponent<SpriteRenderer>().sortingOrder = -10;
 
-                if(tile.name.ToLower().Contains("backdrop"))
+                if (tile.name.ToLower().Contains("backdrop"))
                 {
                     newTile.GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f);
                 }
@@ -541,9 +544,9 @@ public class WorldGen : MonoBehaviour
                 newTile.AddComponent<BoxCollider2D>();
                 newTile.GetComponent<BoxCollider2D>().size = Vector2.one;
                 newTile.tag = "Ground";
-            }              
+            }
 
-            newTile.name =  tile.tileSprites[0].name;
+            newTile.name = tile.tileSprites[0].name;
             newTile.transform.position = new Vector2(x + .5f, y + .5f);
 
             TileClass newTileClass = TileClass.CreateInstance(tile, isNaturallyPlaced);

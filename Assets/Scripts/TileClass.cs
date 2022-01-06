@@ -13,6 +13,7 @@ public class TileClass : ScriptableObject
     public ItemClass.ToolType toolToBreak;
     public bool naturallyPlaced = true;
     public bool isStackable;
+    public bool isPlaceable = true;
 
     public static TileClass CreateInstance(TileClass tile, bool isNaturallyPlaced)
     {

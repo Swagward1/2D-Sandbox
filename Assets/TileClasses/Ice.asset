@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Ice
   m_EditorClassIdentifier: 
   tileName: Ice
+  wallVariant: {fileID: 0}
   tileSprites:
   - {fileID: 21300000, guid: 6532895a8a0f98e42892b1017160cff6, type: 3}
   inBackdrop: 0
+  tileDrop: {fileID: 0}
+  toolToBreak: 0
+  naturallyPlaced: 1
+  isStackable: 0
+  isPlaceable: 1

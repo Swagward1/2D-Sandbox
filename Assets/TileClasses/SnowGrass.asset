@@ -17,5 +17,8 @@ MonoBehaviour:
   tileSprites:
   - {fileID: 21300000, guid: 0c846c04d7aa3e44e899da09b0bf2908, type: 3}
   inBackdrop: 1
-  tileDrop: {fileID: 21300000, guid: 0c846c04d7aa3e44e899da09b0bf2908, type: 3}
+  tileDrop: {fileID: 0}
+  toolToBreak: 0
   naturallyPlaced: 1
+  isStackable: 0
+  isPlaceable: 1

@@ -126,11 +126,11 @@ public class PlayerControl : MonoBehaviour
         {
             if (place)
             {
-                if(selectedItem != null)
+                if (selectedItem != null)
                 {
-                    if(selectedItem.itemType == ItemClass.ItemType.block)
+                    if (selectedItem.itemType == ItemClass.ItemType.block)
                     {
-                        if(terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
+                        if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
                             inventory.Remove(selectedItem);
                     }
                 }
