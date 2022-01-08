@@ -22,6 +22,8 @@ public class CamControl : MonoBehaviour
     }
 
     public void FixedUpdate(){
+
+        //stop camera from showing out of bounds
         Vector3 pos = GetComponent<Transform>().position;
 
         pos.x = Mathf.Lerp(pos.x, playerTransform.position.x, smoothTime);

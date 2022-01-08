@@ -42,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Time
+    uniqueID: 4209825377
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
