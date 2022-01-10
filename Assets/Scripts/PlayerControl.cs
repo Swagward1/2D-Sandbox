@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
@@ -13,6 +14,10 @@ public class PlayerControl : MonoBehaviour
     public bool inventoryShowing = false;
 
     public ItemClass selectedItem;
+    
+    //public List<TileClass> tiles;
+
+    //[Dropdown("tiles")]
 
     public int playerReach;
     public Vector2Int mousePos;
@@ -31,6 +36,7 @@ public class PlayerControl : MonoBehaviour
     [HideInInspector]
     public Vector2 spawnPos;
     public WorldGen terrainGenerator;
+
 
     private void Start()
     {
@@ -128,7 +134,7 @@ public class PlayerControl : MonoBehaviour
             {
                 if (selectedItem != null)
                 {
-                    if (selectedItem.itemType == ItemClass.ItemType.block)
+                    if (selectedItem.itemType == ItemClass.ItemType.block /*&& (coalTiles.isPlaceable || diamondTiles.isPlaceable)*/)
                     {
                         if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
                             inventory.Remove(selectedItem);

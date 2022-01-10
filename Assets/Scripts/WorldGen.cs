@@ -66,7 +66,7 @@ public class WorldGen : MonoBehaviour
         worldTilesMap = new Texture2D (worldSize, worldSize);
         
         //enable for blocky lighting, disable for blended lighting.
-        worldTilesMap.filterMode = FilterMode.Point;
+        //worldTilesMap.filterMode = FilterMode.Point;
         
         lightShader.SetTexture("_ShadowTex", worldTilesMap);
 

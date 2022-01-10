@@ -15,11 +15,11 @@ C:/Github Repos/2D-Sandbox
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58484
+50643
 Successfully changed project path to: C:/Github Repos/2D-Sandbox
 C:/Github Repos/2D-Sandbox
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 58.48 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 90.85 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.4f1 (0abb6314276a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Resources/UnitySubsystems
@@ -36,581 +36,295 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56704
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002962 seconds.
+Registered in 0.002743 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 58.81 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 67.72 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.507 seconds
+- Completed reload, in  3.597 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.002503 seconds.
+Registered in 0.002284 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 59.17 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 68.83 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.120 seconds
+- Completed reload, in  1.588 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.70 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2618 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 124.6 MB.
-System memory in use after: 124.8 MB.
+System memory in use before: 126.6 MB.
+System memory in use after: 126.7 MB.
 
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 3060.
-Total: 2.397500 ms (FindLiveObjects: 0.282100 ms CreateObjectMapping: 0.153000 ms MarkObjects: 1.817000 ms  DeleteObjects: 0.144500 ms)
+Total: 2.647300 ms (FindLiveObjects: 0.344900 ms CreateObjectMapping: 0.177700 ms MarkObjects: 2.015800 ms  DeleteObjects: 0.107000 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/voxel-pack (1)/Spritesheets/spritesheet_characters.xml
-  artifactKey: Guid(4765e5beaaa146347a55e373ba305036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/Spritesheets/spritesheet_characters.xml using Guid(4765e5beaaa146347a55e373ba305036) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0596ce278ae144970eba582d98ef9634') in 0.048567 seconds
-  Import took 0.052984 seconds .
+  path: Assets/Scripts/PlayerControl.cs
+  artifactKey: Guid(17654d94c9453914ca2bd6a9dc0fa492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/PlayerControl.cs using Guid(17654d94c9453914ca2bd6a9dc0fa492) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4c9ee8bace324d98840701552f07964') in 0.030716 seconds
+  Import took 0.037071 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/voxel-pack (1)/Spritesheets
-  artifactKey: Guid(218d8d8d5e7d5514590bffd31009c3c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/Spritesheets using Guid(218d8d8d5e7d5514590bffd31009c3c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'feaad9a08522b685bb571c194c54ba8e') in 0.010339 seconds
-  Import took 0.015002 seconds .
+  Time since last request: 0.000254 seconds.
+  path: Assets/Scripts/WorldGen.cs
+  artifactKey: Guid(d9f4bccbe7e4af34cb20e0b890477420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/WorldGen.cs using Guid(d9f4bccbe7e4af34cb20e0b890477420) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39197892f5a9591fa66b610ccadb2abd') in 0.008968 seconds
+  Import took 0.013451 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 39.970754 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/pick_iron.png
-  artifactKey: Guid(b1c52475615b1954cbd644e748b18316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/pick_iron.png using Guid(b1c52475615b1954cbd644e748b18316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b10ae9b8bde428c7221440f824ee17e') in 0.085752 seconds
-  Import took 0.090297 seconds .
+  Time since last request: 73.608081 seconds.
+  path: Assets/Scripts/TileAtlas.cs
+  artifactKey: Guid(bf0a3f2cd8d135e4ba0a3fd43b62fc83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/TileAtlas.cs using Guid(bf0a3f2cd8d135e4ba0a3fd43b62fc83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83a03c2402aff1ea910e2ba9c4ee8a39') in 0.010977 seconds
+  Import took 0.018378 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000238 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/boat.png
-  artifactKey: Guid(ba5bfd9ff0d9cd74b9c5652de8772aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/boat.png using Guid(ba5bfd9ff0d9cd74b9c5652de8772aad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0688cf236d8f06b43a415cfd24acb01e') in 0.015593 seconds
-  Import took 0.021377 seconds .
+  Time since last request: 3.048633 seconds.
+  path: Assets/Scripts/TileClass.cs
+  artifactKey: Guid(0389744643b8f2e4086093884cffe957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/TileClass.cs using Guid(0389744643b8f2e4086093884cffe957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cae15e9d541aadce1cbb28b233a43a2a') in 0.009769 seconds
+  Import took 0.015467 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000388 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/bowl.png
-  artifactKey: Guid(0beba5f2e95bcd14c940ade958933880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/bowl.png using Guid(0beba5f2e95bcd14c940ade958933880) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27b3caef04df03962edb3258e77fe124') in 0.017366 seconds
-  Import took 0.022797 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/arrow.png
-  artifactKey: Guid(8cb398f325ac09b4391161670b175f53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/arrow.png using Guid(8cb398f325ac09b4391161670b175f53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b28328d37624b01acc0f070a53e65c6') in 0.016413 seconds
-  Import took 0.020840 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000186 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/apple.png
-  artifactKey: Guid(e591f2922861a8243870694e827fbaa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/apple.png using Guid(e591f2922861a8243870694e827fbaa3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3f01d063e24cfad32542f95295b8b05') in 0.014269 seconds
-  Import took 0.019930 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/fish.png
-  artifactKey: Guid(18bb5bb5d8e503d4b9a185e2bfe50667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/fish.png using Guid(18bb5bb5d8e503d4b9a185e2bfe50667) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b217abfc5f63632d91208e03cc149de3') in 0.019112 seconds
-  Import took 0.025136 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/fishingPole.png
-  artifactKey: Guid(705ea9fcbe740904ba07436f025886c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/fishingPole.png using Guid(705ea9fcbe740904ba07436f025886c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b8674445e0c7742b5473e4fc8b6d76') in 0.017895 seconds
-  Import took 0.022850 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000143 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/fish_cooked.png
-  artifactKey: Guid(0a7e641a1bc7782449d7a93647fee4dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/fish_cooked.png using Guid(0a7e641a1bc7782449d7a93647fee4dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5749cb80d116463e76836f6347f5f9b') in 0.014635 seconds
-  Import took 0.022617 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/axe_diamond.png
-  artifactKey: Guid(82cbc21cb707fac409e334ca22df653f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/axe_diamond.png using Guid(82cbc21cb707fac409e334ca22df653f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd79fb20039511b0c5e0207cd77584fe4') in 0.019584 seconds
-  Import took 0.025801 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/axe_silver.png
-  artifactKey: Guid(bbe089533e307bf4a8e180e3c12af8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/axe_silver.png using Guid(bbe089533e307bf4a8e180e3c12af8d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5f10cdde6210e665ec5a5f1ffd2a92a') in 0.015759 seconds
-  Import took 0.022239 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/bow.png
-  artifactKey: Guid(116b70fca0cd08944a0b389e16d9010c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/bow.png using Guid(116b70fca0cd08944a0b389e16d9010c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e85361dd9420df8046dbf9598fb085fb') in 0.016084 seconds
-  Import took 0.024540 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/bowArrow.png
-  artifactKey: Guid(0d26f4fd404723146814d8ae4132eae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/bowArrow.png using Guid(0d26f4fd404723146814d8ae4132eae9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8cf57326a14ce14cc811b0d07df2b49f') in 0.021117 seconds
-  Import took 0.026721 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_diamond.png
-  artifactKey: Guid(0330bbd8a84d78f4b8dda2c98439d20b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_diamond.png using Guid(0330bbd8a84d78f4b8dda2c98439d20b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db7571cb517e08621774d8655586ee6b') in 0.018711 seconds
-  Import took 0.026071 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000195 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/axe_bronze.png
-  artifactKey: Guid(207dcc3411be86e40aa7e519020d13cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/axe_bronze.png using Guid(207dcc3411be86e40aa7e519020d13cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35fe316d96fd52e5d136de36c97efcef') in 0.012550 seconds
-  Import took 0.018282 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000209 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_iron.png
-  artifactKey: Guid(14f3cd6c5d89bf94db9eb0f08c901136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_iron.png using Guid(14f3cd6c5d89bf94db9eb0f08c901136) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e4c30d17b385367ecd7378aac649309') in 0.020108 seconds
-  Import took 0.026106 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_bronze.png
-  artifactKey: Guid(5c50479e8a5bd144ab1849180852afba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_bronze.png using Guid(5c50479e8a5bd144ab1849180852afba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb5bc721cc42fbb1994a506676289bfd') in 0.013900 seconds
-  Import took 0.018298 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000212 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/axe_iron.png
-  artifactKey: Guid(e32ee560964938540a289679d7153c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/axe_iron.png using Guid(e32ee560964938540a289679d7153c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6032bf137dff58ccc59ca352bddf9829') in 0.013702 seconds
-  Import took 0.020026 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000201 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_gold.png
-  artifactKey: Guid(5e9203bdd50e22b4498a53e4f6fc3467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_gold.png using Guid(5e9203bdd50e22b4498a53e4f6fc3467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9dc4574025979c45e676f1a7322d14') in 0.013966 seconds
-  Import took 0.019317 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000187 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/axe_gold.png
-  artifactKey: Guid(218d2e058e5236c40882e2d20dd20dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/axe_gold.png using Guid(218d2e058e5236c40882e2d20dd20dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b827cfef901fe480ecd1595f7437032a') in 0.013605 seconds
-  Import took 0.017983 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_silver.png
-  artifactKey: Guid(9db0ae826c32cd449bd6a9e82dd15637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_silver.png using Guid(9db0ae826c32cd449bd6a9e82dd15637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5321996a7e2da5227372de086c5d8dc') in 0.014931 seconds
-  Import took 0.021394 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000215 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_gold.png
-  artifactKey: Guid(5e9203bdd50e22b4498a53e4f6fc3467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_gold.png using Guid(5e9203bdd50e22b4498a53e4f6fc3467) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba9dc4574025979c45e676f1a7322d14') in 0.012530 seconds
-  Import took 0.017043 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000325 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/flail_silver.png
-  artifactKey: Guid(9db0ae826c32cd449bd6a9e82dd15637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/flail_silver.png using Guid(9db0ae826c32cd449bd6a9e82dd15637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5321996a7e2da5227372de086c5d8dc') in 0.013153 seconds
-  Import took 0.019994 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.996446 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hammer_bronze.png
-  artifactKey: Guid(79d16b2ed3c1da844bf62216e00ca02e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hammer_bronze.png using Guid(79d16b2ed3c1da844bf62216e00ca02e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c13727e5cd87043c1f7d9c7bfeffb28') in 0.015341 seconds
-  Import took 0.019913 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000412 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hammer_silver.png
-  artifactKey: Guid(0affade3c9708de4198008e4965a9d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hammer_silver.png using Guid(0affade3c9708de4198008e4965a9d53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c32fe5ba08ea160745b90c3400b18ac9') in 0.012044 seconds
-  Import took 0.016373 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000290 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hoe_bronze.png
-  artifactKey: Guid(abc1765161b09964f8a26a740e7efc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hoe_bronze.png using Guid(abc1765161b09964f8a26a740e7efc6e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757a41b66606032b268c1a32e599eb5c') in 0.017562 seconds
-  Import took 0.022982 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000287 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hammer_gold.png
-  artifactKey: Guid(c532f4dc6f44db3449ea2fb810e9e66a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hammer_gold.png using Guid(c532f4dc6f44db3449ea2fb810e9e66a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c61949ac8c07ca928dd826b6cabae70d') in 0.012690 seconds
-  Import took 0.020663 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hammer_diamond.png
-  artifactKey: Guid(fb3a8ffc4f74dc14e9b988d9cbbe2dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hammer_diamond.png using Guid(fb3a8ffc4f74dc14e9b988d9cbbe2dbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc9dd71b3266f90f41e6cf523fa98d80') in 0.015717 seconds
-  Import took 0.021054 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hammer_iron.png
-  artifactKey: Guid(36f9ef412aa95774ba2cc4f390eb2215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hammer_iron.png using Guid(36f9ef412aa95774ba2cc4f390eb2215) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4017f0bd3062be81e63cac653bcc5a86') in 0.025633 seconds
-  Import took 0.031703 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.245468 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hoe_diamond.png
-  artifactKey: Guid(45cddc0e0e083f14bb060c8bf19af71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hoe_diamond.png using Guid(45cddc0e0e083f14bb060c8bf19af71f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e4e46b2445f611b49301c78cc13a662d') in 0.016567 seconds
-  Import took 0.021880 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000364 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hoe_silver.png
-  artifactKey: Guid(1ad1bcd4659a0924a9c48df468bdb719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hoe_silver.png using Guid(1ad1bcd4659a0924a9c48df468bdb719) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca1c7dbc660be05a914c52d5a6b82689') in 0.012510 seconds
-  Import took 0.016677 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000267 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/minecart.png
-  artifactKey: Guid(582bb394a4855ae4aa76c4f1f72d0c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/minecart.png using Guid(582bb394a4855ae4aa76c4f1f72d0c7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75b587221c3230e101313a796aecf03a') in 0.018745 seconds
-  Import took 0.023198 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_coal.png
-  artifactKey: Guid(7b56d1f8a393e6a458c6b8c666f7704c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_coal.png using Guid(7b56d1f8a393e6a458c6b8c666f7704c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64c96b4297823936e4936649c9e77122') in 0.015267 seconds
-  Import took 0.020236 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001674 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hoe_iron.png
-  artifactKey: Guid(45aa65042c25a834baf276b03412c66f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hoe_iron.png using Guid(45aa65042c25a834baf276b03412c66f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e95008825e91fb7c79307bc9063dff6c') in 0.013574 seconds
-  Import took 0.020623 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hoe_gold.png
-  artifactKey: Guid(d0ec74973e1c94a40b2e66e329614a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hoe_gold.png using Guid(d0ec74973e1c94a40b2e66e329614a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b09740a963ddf00be57578c20e87591') in 0.013616 seconds
-  Import took 0.019911 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000173 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_diamond.png
-  artifactKey: Guid(c977b57d026cabb469113b504811b88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_diamond.png using Guid(c977b57d026cabb469113b504811b88e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5a8bc7ddafec1b30271c2da5a0154b9') in 0.013670 seconds
-  Import took 0.018549 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000213 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/hoe_iron.png
-  artifactKey: Guid(45aa65042c25a834baf276b03412c66f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/hoe_iron.png using Guid(45aa65042c25a834baf276b03412c66f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e95008825e91fb7c79307bc9063dff6c') in 0.012967 seconds
-  Import took 0.019669 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_emerald.png
-  artifactKey: Guid(bdb5a6c4462c31a41a0d75e0c6c5696d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_emerald.png using Guid(bdb5a6c4462c31a41a0d75e0c6c5696d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97dc8722585a865c662537ca7e431c41') in 0.012927 seconds
-  Import took 0.019410 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_ruby.png
-  artifactKey: Guid(cc52144b2a14283448a07dd6b65ae8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_ruby.png using Guid(cc52144b2a14283448a07dd6b65ae8cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8a72652d3e052f49757002690901ca9') in 0.014305 seconds
-  Import took 0.020227 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_iron.png
-  artifactKey: Guid(f5f2bf3af0535f54597264df249573f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_iron.png using Guid(f5f2bf3af0535f54597264df249573f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8bb818e6ec91ac2e364f806b9b1badfc') in 0.014500 seconds
-  Import took 0.021354 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_gold.png
-  artifactKey: Guid(cd3ce202298141a4eb26498e1a9d7abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_gold.png using Guid(cd3ce202298141a4eb26498e1a9d7abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c1473879a940c9176dd0cbc2a34935a') in 0.015251 seconds
-  Import took 0.021435 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000197 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_ironAlt.png
-  artifactKey: Guid(168fe361f40253c47a3a60a01d989e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_ironAlt.png using Guid(168fe361f40253c47a3a60a01d989e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aa366309e7758eea735093cb89103903') in 0.014683 seconds
-  Import took 0.019081 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.293297 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/ore_silver.png
-  artifactKey: Guid(0429fbe9cecada440ab40a3a2d36b9d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/ore_silver.png using Guid(0429fbe9cecada440ab40a3a2d36b9d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1029c679ed6fa539a572703e99109ab2') in 0.015548 seconds
-  Import took 0.021965 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000296 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/pick_diamond.png
-  artifactKey: Guid(2fd652b338687e84ba36ba9c613eba82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/pick_diamond.png using Guid(2fd652b338687e84ba36ba9c613eba82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6c1ecf581385ee086d091db3ae0b6f1') in 0.014184 seconds
-  Import took 0.018985 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000795 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/pick_bronze.png
-  artifactKey: Guid(c72be0f08afbc2144990ee3c99bf6403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/pick_bronze.png using Guid(c72be0f08afbc2144990ee3c99bf6403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '412a29b726907513351e2ff036027639') in 0.017826 seconds
-  Import took 0.023232 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/pick_gold.png
-  artifactKey: Guid(60eb33a13c31bbf44a40187fe797dddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/pick_gold.png using Guid(60eb33a13c31bbf44a40187fe797dddf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1ca12bbcf02500578260ad9087e6042') in 0.019181 seconds
-  Import took 0.025902 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000298 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/pick_silver.png
-  artifactKey: Guid(2bdb717cbe670ac4d95cda5457cf9c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/pick_silver.png using Guid(2bdb717cbe670ac4d95cda5457cf9c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a1993a74b35de68c4d83750734e9e7b') in 0.015546 seconds
-  Import took 0.019883 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.011941 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/seed.png
-  artifactKey: Guid(cce946ab3c2a1624ebd525919dcb704a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/seed.png using Guid(cce946ab3c2a1624ebd525919dcb704a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90a2e7884f6249c100654e587735546d') in 0.013386 seconds
-  Import took 0.018823 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000210 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/shovel_diamond.png
-  artifactKey: Guid(78a82d9717dafa644b20e443afc89b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/shovel_diamond.png using Guid(78a82d9717dafa644b20e443afc89b8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b703b7b7cf7aa7fb9826c8811eb4fe5') in 0.015165 seconds
-  Import took 0.022159 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000193 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/sword_iron.png
-  artifactKey: Guid(b2c1169028d81ef4183c9af99e5efa90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/sword_iron.png using Guid(b2c1169028d81ef4183c9af99e5efa90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '864cbd2637c12866e54da886ff0fc3bd') in 0.014178 seconds
-  Import took 0.020087 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000185 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/sword_gold.png
-  artifactKey: Guid(d0c2894749e42774881f6e516c71d19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/sword_gold.png using Guid(d0c2894749e42774881f6e516c71d19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ae2bce5c50a3318081fd429a0e4f060') in 0.016736 seconds
-  Import took 0.022548 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/sword_bronze.png
-  artifactKey: Guid(3f1e92f22e04aba459a6866b0cd557be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/sword_bronze.png using Guid(3f1e92f22e04aba459a6866b0cd557be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46bae2ca8dd67a78e386a1e9a7713d15') in 0.019824 seconds
-  Import took 0.024355 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000200 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/shovel_bronze.png
-  artifactKey: Guid(2948c0879498e504189efe871acf6cef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/shovel_bronze.png using Guid(2948c0879498e504189efe871acf6cef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50a1300a7ad822777008777bbbb83244') in 0.014399 seconds
-  Import took 0.019194 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000216 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/sword_diamond.png
-  artifactKey: Guid(1d43d0533af0ace448b7d4c8c5d8966a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/sword_diamond.png using Guid(1d43d0533af0ace448b7d4c8c5d8966a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c5048cdc8185c99494657c72cefb165') in 0.014842 seconds
-  Import took 0.023518 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/stew.png
-  artifactKey: Guid(87987ad2b98f42b4ebc6abde8b245cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/stew.png using Guid(87987ad2b98f42b4ebc6abde8b245cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89dd2540d7b1d4d4b12caed4fa1f2a71') in 0.018894 seconds
-  Import took 0.023233 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000188 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/sword_silver.png
-  artifactKey: Guid(bbb66c0bac8c82544ae3b74cab2f2846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/sword_silver.png using Guid(bbb66c0bac8c82544ae3b74cab2f2846) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4a7d583006b1bfc91eb37e8d0b946fb') in 0.014721 seconds
-  Import took 0.024377 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/shovel_iron.png
-  artifactKey: Guid(ad93932357979ce478ad99f0ef99e9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/shovel_iron.png using Guid(ad93932357979ce478ad99f0ef99e9ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13508d5e27e4208f137be0ab22c0e248') in 0.014459 seconds
-  Import took 0.020171 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000241 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/shovel_gold.png
-  artifactKey: Guid(46a20e5e53c7fd94ca931f517a41f1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/shovel_gold.png using Guid(46a20e5e53c7fd94ca931f517a41f1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23c3e0dabf989681819e674539643ac1') in 0.017403 seconds
-  Import took 0.024455 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000062 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/shovel_silver.png
-  artifactKey: Guid(46b12e6d85e3ec246996ed0a84d9d513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/shovel_silver.png using Guid(46b12e6d85e3ec246996ed0a84d9d513) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e076e4ce340e4415081eb8098ce876f') in 0.022526 seconds
-  Import took 0.028149 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.136990 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/torch.png
-  artifactKey: Guid(f797805be86718b4888aa31016c9321f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/torch.png using Guid(f797805be86718b4888aa31016c9321f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fdaf45ea528937e9f08c4aee80d36322') in 0.016180 seconds
-  Import took 0.021880 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000240 seconds.
-  path: Assets/voxel-pack (1)/PNG/Items/wheat.png
-  artifactKey: Guid(48ecdcf7f0a7367449dd395977ea83ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/voxel-pack (1)/PNG/Items/wheat.png using Guid(48ecdcf7f0a7367449dd395977ea83ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e47abb2b97271735a13c3b90d4bf13e') in 0.016023 seconds
-  Import took 0.021395 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 136.285761 seconds.
-  path: Assets/Scripts/ItemClass.cs
-  artifactKey: Guid(a76b8b791b7f530488d3f54913f0ad60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ItemClass.cs using Guid(a76b8b791b7f530488d3f54913f0ad60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1418d1e1e7375fb0d693c3303053300c') in 0.011007 seconds
-  Import took 0.017468 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001640 seconds.
-  path: Assets/Scripts/ItemClass.cs
-  artifactKey: Guid(a76b8b791b7f530488d3f54913f0ad60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ItemClass.cs using Guid(a76b8b791b7f530488d3f54913f0ad60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1418d1e1e7375fb0d693c3303053300c') in 0.002631 seconds
-  Import took 0.008039 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 44.437629 seconds.
-  path: Assets/Scripts/ToolClass.cs
-  artifactKey: Guid(35297bd331a011b4eb89443510d077b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scripts/ToolClass.cs using Guid(35297bd331a011b4eb89443510d077b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b499ceb13d1aa270d2101ae7dc16e086') in 0.007935 seconds
-  Import took 0.012338 seconds .
+  Time since last request: 0.000858 seconds.
+  path: Assets/Scripts/TileClass.cs
+  artifactKey: Guid(0389744643b8f2e4086093884cffe957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/TileClass.cs using Guid(0389744643b8f2e4086093884cffe957) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cae15e9d541aadce1cbb28b233a43a2a') in 0.003989 seconds
+  Import took 0.008821 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.002273 seconds.
+Registered in 0.002131 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.944 seconds
+- Completed reload, in  0.902 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.8 MB.
+System memory in use after: 118.0 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3063.
+Total: 2.233800 ms (FindLiveObjects: 0.259900 ms CreateObjectMapping: 0.128100 ms MarkObjects: 1.725300 ms  DeleteObjects: 0.119800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002344 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.925 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.63 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.9 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3066.
+Total: 2.340100 ms (FindLiveObjects: 0.268000 ms CreateObjectMapping: 0.128100 ms MarkObjects: 1.829400 ms  DeleteObjects: 0.113900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002841 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.49 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.978 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.9 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3069.
+Total: 2.578300 ms (FindLiveObjects: 0.426500 ms CreateObjectMapping: 0.167700 ms MarkObjects: 1.895600 ms  DeleteObjects: 0.086900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002150 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.892 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.9 MB.
+System memory in use after: 118.1 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3072.
+Total: 2.248700 ms (FindLiveObjects: 0.271000 ms CreateObjectMapping: 0.120000 ms MarkObjects: 1.755700 ms  DeleteObjects: 0.100700 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 378.396948 seconds.
+  path: Assets/TileClasses/Ore/Coal 1.asset
+  artifactKey: Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TileClasses/Ore/Coal 1.asset using Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e84df0875a1135957c62a614fab9bf28') in 0.029139 seconds
+  Import took 0.034604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003291 seconds.
+  path: Assets/TileClasses/Ore/Coal 1.asset
+  artifactKey: Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TileClasses/Ore/Coal 1.asset using Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e84df0875a1135957c62a614fab9bf28') in 0.006023 seconds
+  Import took 0.012239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.096363 seconds.
+  path: Assets/TileClasses/Ore/Coal Ingot.asset
+  artifactKey: Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TileClasses/Ore/Coal Ingot.asset using Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '14ab7a13e6524742cea45dc55ba7657f') in 0.012226 seconds
+  Import took 0.017909 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.907389 seconds.
+  path: Assets/TileClasses/Ore/Coal Ingot.asset
+  artifactKey: Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TileClasses/Ore/Coal Ingot.asset using Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23dcf40cec5e293b41bbc686d3b4fb35') in 0.006359 seconds
+  Import took 0.012231 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.008022 seconds.
+  path: Assets/TileClasses/Ore/Coal Ingot.asset
+  artifactKey: Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TileClasses/Ore/Coal Ingot.asset using Guid(b21f8053fa95b0341a2e8b54cf0dd177) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23dcf40cec5e293b41bbc686d3b4fb35') in 0.005263 seconds
+  Import took 0.011692 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003692 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.57 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.347 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.9 MB.
+System memory in use after: 118.0 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3075.
+Total: 6.356500 ms (FindLiveObjects: 0.934200 ms CreateObjectMapping: 0.246100 ms MarkObjects: 5.086300 ms  DeleteObjects: 0.087800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002293 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.919 seconds
 Platform modules already initialized, skipping
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Refreshing native plugins compatible for Editor in 0.48 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 118.9 MB.
-System memory in use after: 119.1 MB.
+System memory in use before: 118.0 MB.
+System memory in use after: 118.2 MB.
 
-Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3069.
-Total: 2.189100 ms (FindLiveObjects: 0.261500 ms CreateObjectMapping: 0.127400 ms MarkObjects: 1.704300 ms  DeleteObjects: 0.094900 ms)
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3078.
+Total: 2.715700 ms (FindLiveObjects: 0.309000 ms CreateObjectMapping: 0.142600 ms MarkObjects: 2.188400 ms  DeleteObjects: 0.074400 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002161 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.021 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.0 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3081.
+Total: 2.469000 ms (FindLiveObjects: 0.304700 ms CreateObjectMapping: 0.145500 ms MarkObjects: 1.908400 ms  DeleteObjects: 0.109600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002092 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.901 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2490 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 118.0 MB.
+System memory in use after: 118.2 MB.
+
+Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3084.
+Total: 2.821900 ms (FindLiveObjects: 0.310400 ms CreateObjectMapping: 0.147500 ms MarkObjects: 2.257100 ms  DeleteObjects: 0.105000 ms)
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
