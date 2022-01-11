@@ -26,6 +26,7 @@ public class ItemClass
     public string itemName;
     public Sprite sprite;
     public bool isStackable;
+    //public bool isPlaceable;
 
     public TileClass tile;
     public ToolClass tool;

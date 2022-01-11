@@ -14,11 +14,8 @@ public class PlayerControl : MonoBehaviour
     public bool inventoryShowing = false;
 
     public ItemClass selectedItem;
+    [SerializeField]public TileClass tile;
     
-    //public List<TileClass> tiles;
-
-    //[Dropdown("tiles")]
-
     public int playerReach;
     public Vector2Int mousePos;
 
@@ -84,6 +81,7 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+
         horizontal = Input.GetAxis("Horizontal");
 
         hit = Input.GetMouseButton(0);
@@ -132,12 +130,20 @@ public class PlayerControl : MonoBehaviour
         {
             if (place)
             {
-                if (selectedItem != null)
+                if(selectedItem.itemName.ToLower().Contains("ingot"))
                 {
-                    if (selectedItem.itemType == ItemClass.ItemType.block /*&& (coalTiles.isPlaceable || diamondTiles.isPlaceable)*/)
+                    return;
+                }
+
+                else
+                {
+                    if (selectedItem != null)
                     {
-                        if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
-                            inventory.Remove(selectedItem);
+                        if (selectedItem.itemType == ItemClass.ItemType.block)
+                        {
+                            if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
+                                inventory.Remove(selectedItem);
+                        }
                     }
                 }
             }

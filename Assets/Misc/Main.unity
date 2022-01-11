@@ -509,6 +509,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: tile
+      value: 
+      objectReference: {fileID: 11400000, guid: b21f8053fa95b0341a2e8b54cf0dd177, type: 2}
+    - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: playerReach
       value: 50
       objectReference: {fileID: 0}
