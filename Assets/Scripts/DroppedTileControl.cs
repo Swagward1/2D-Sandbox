@@ -15,5 +15,11 @@ public class DroppedTileControl : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
+
+        if(col.gameObject.CompareTag("DeathZone"))
+        {
+            Debug.Log("Tile fallen through world, destroying object");
+            Destroy(this.gameObject);
+        }
     }
 }

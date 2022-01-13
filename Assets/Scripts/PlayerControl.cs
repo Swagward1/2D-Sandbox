@@ -130,20 +130,17 @@ public class PlayerControl : MonoBehaviour
         {
             if (place)
             {
-                if(selectedItem.itemName.ToLower().Contains("ingot"))
+                if (selectedItem != null)
                 {
-                    return;
-                }
-
-                else
-                {
-                    if (selectedItem != null)
+                    if(selectedItem.itemName.ToLower().Contains("ingot"))
                     {
-                        if (selectedItem.itemType == ItemClass.ItemType.block)
-                        {
-                            if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
-                                inventory.Remove(selectedItem);
-                        }
+                        return;
+                    }
+                    
+                    else if (selectedItem.itemType == ItemClass.ItemType.block)
+                    {
+                        if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
+                            inventory.Remove(selectedItem);
                     }
                 }
             }
@@ -168,11 +165,11 @@ public class PlayerControl : MonoBehaviour
         anim.SetBool("hit", hit || place);
     }
 
-    /*private void OnValidate()
+    private void OnValidate()
     {
         Debug.DrawRay(transform.position - (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from knees
         Debug.DrawRay(transform.position + (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from head
-    }*/
+    }
 
     public bool FootRaycast()
     {
