@@ -32,6 +32,7 @@ public class WorldGen : MonoBehaviour
 
     [Header("World Generation")]
     public int chunkSize = 32;
+    public int removeChunkRender = 16;
     public int worldSize = 128;
     public int heightAdd = 25;
     public bool caveGen = true;
@@ -115,19 +116,19 @@ public class WorldGen : MonoBehaviour
         mainCam.worldSize = worldSize;
         player.Spawn();
 
-        RefreshChunks();
+        //RefreshChunks();
     }
 
     void Update()
     {
-        RefreshChunks();
+        //RefreshChunks();
     }
 
     void RefreshChunks()
     {
         for (int i = 0; i < worldChunks.Length; i++)
         {
-            if (Vector2.Distance(new Vector2((i * chunkSize) + (chunkSize / 2), 0), new Vector2(player.transform.position.x, 0)) > Camera.main.orthographicSize * 4f)
+            if (Vector2.Distance(new Vector2((i * removeChunkRender) + (removeChunkRender / 2), 0), new Vector2(player.transform.position.x, 0)) > Camera.main.orthographicSize * 4f)
                 worldChunks[i].SetActive(false);
             else
                 worldChunks[i].SetActive(true);

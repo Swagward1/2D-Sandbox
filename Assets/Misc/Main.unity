@@ -460,10 +460,6 @@ PrefabInstance:
       propertyPath: inventoryUI
       value: 
       objectReference: {fileID: 1674863447}
-    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
-      propertyPath: inventoryWidth
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 5035371791158722997, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -509,21 +505,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
-      propertyPath: tile
-      value: 
-      objectReference: {fileID: 11400000, guid: b21f8053fa95b0341a2e8b54cf0dd177, type: 2}
-    - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
-      propertyPath: playerReach
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: hotBarSelector
       value: 
       objectReference: {fileID: 7633966039681535443}
-    - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
-      propertyPath: Tiles.Array.size
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: terrainGenerator
       value: 
@@ -894,9 +878,9 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 11565
-    ctime1: 24865
-    ctime2: 52235
+    ctime0: 8192
+    ctime1: 19661
+    ctime2: 49151
     ctime3: 65535
     ctime4: 65535
     ctime5: 0
@@ -910,11 +894,12 @@ MonoBehaviour:
     atime5: 0
     atime6: 0
     atime7: 0
-    m_Mode: 0
+    m_Mode: 1
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   biomeMap: {fileID: 0}
   chunkSize: 16
+  removeChunkRender: 16
   worldSize: 128
   heightAdd: 64
   caveGen: 1

@@ -590,7 +590,8 @@ MonoBehaviour:
     isStackable: 0
     tile: {fileID: 0}
     tool: {fileID: 0}
-  playerReach: 5
+  tile: {fileID: 11400000, guid: b21f8053fa95b0341a2e8b54cf0dd177, type: 2}
+  playerReach: 50
   mousePos: {x: 0, y: 0}
   movementSpeed: 4
   jumpForce: 10
@@ -600,7 +601,6 @@ MonoBehaviour:
   place: 0
   spawnPos: {x: 0, y: 0}
   terrainGenerator: {fileID: 0}
-  tiles: []
 --- !u!95 &5035371791158722998
 Animator:
   serializedVersion: 3
@@ -642,7 +642,7 @@ MonoBehaviour:
   inventoryUI: {fileID: 0}
   hotbarUI: {fileID: 0}
   inventorySlotPrefab: {fileID: 6123280268520923695, guid: 0b18e200985e6924bbf27090779a3d65, type: 3}
-  inventoryWidth: 13
+  inventoryWidth: 7
   inventoryHeight: 4
   stackLimit: 64
   hotbarUISlots: []

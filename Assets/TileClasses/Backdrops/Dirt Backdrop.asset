@@ -15,8 +15,7 @@ MonoBehaviour:
   tileName: Dirt Backdrop
   wallVariant: {fileID: 0}
   tileSprites:
-  - {fileID: 21300000, guid: d06a21fbaecd98243a96b1eb8cfd5f62, type: 3}
-  - {fileID: 21300000, guid: dc6e23c6eeb1df6468723033a04abff0, type: 3}
+  - {fileID: 21300000, guid: edf2f4fc2a7e4f34dad3d1032ff5b87b, type: 3}
   inBackdrop: 1
   tileDrop: {fileID: 11400000}
   toolToBreak: 3

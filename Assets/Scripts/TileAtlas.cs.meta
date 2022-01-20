@@ -11,6 +11,7 @@ MonoImporter:
   - leaves: {fileID: 11400000, guid: fd2e416d72f08914b8fea23cfc96cab1, type: 2}
   - trunk: {fileID: 11400000, guid: 39389d61833bc4349b54a59f3129fe46, type: 2}
   - tallGrass: {fileID: 11400000, guid: aae4c0c849a4ebb47bdd5b3b3c5b33e0, type: 2}
+  - bedrock: {fileID: 11400000, guid: 21a1059f43f7fa84b88ac8dc052d3a30, type: 2}
   - coal: {fileID: 11400000, guid: 9f5f8b5f61217d4438b7253123b08890, type: 2}
   - iron: {fileID: 11400000, guid: 87f30330baf72ae4caa71a270341a870, type: 2}
   - gold: {fileID: 11400000, guid: 14e43f4f770d4984e89814ed8ffefd53, type: 2}
