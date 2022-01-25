@@ -23,7 +23,6 @@ public class Inventory : MonoBehaviour
     public int inventoryHeight;
     public int stackLimit = 64;
 
-
     public InventorySlot[,] inventorySlots;
     public InventorySlot[] hotbarSlots;
 

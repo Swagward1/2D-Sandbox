@@ -12,11 +12,11 @@ public class PlayerControl : MonoBehaviour
     public GameObject heldItem;
 
     public bool inventoryShowing = false;
-    public bool optionsShowing = false;
+    public bool optionsMenuShowing = false;
+    public GameObject options;
 
     //referenced scripts
     public Inventory inventory;
-    public Options options;
     public ItemClass selectedItem;
     //[SerializeField]public TileClass tile;
     public WorldGen terrainGenerator;
@@ -45,7 +45,6 @@ public class PlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
 
         inventory = GetComponent<Inventory>();
-        options = GetComponent<Options>();
     }
 
     public void Spawn()
@@ -133,7 +132,8 @@ public class PlayerControl : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.E))
         {
-            inventoryShowing = !inventoryShowing;
+            if(optionsMenuShowing == false)
+                inventoryShowing = !inventoryShowing;
         }
 
         if (Vector2.Distance(transform.position, mousePos) <= playerReach &&
@@ -184,23 +184,47 @@ public class PlayerControl : MonoBehaviour
 
         anim.SetFloat("horizontal", horizontal);
         anim.SetBool("hit", hit || place);
+
+        OptionsMenu();
     }
 
-    private void OnValidate()
+    public void OptionsMenu()
     {
-        Debug.DrawRay(transform.position - (Vector3.up * .25f), -Vector2.right, Color.white, 10f); //draw ray from knees
-        Debug.DrawRay(transform.position + (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from head
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(optionsMenuShowing == false)
+            {
+                if(inventoryShowing == false)
+                {
+                    optionsMenuShowing = true;
+                    options.SetActive(true);
+                    inventory.hotbarUI.SetActive(false);
+                }
+            }
+            else if(optionsMenuShowing)
+            {
+                optionsMenuShowing = !optionsMenuShowing;
+                options.SetActive(false);
+                inventory.hotbarUI.SetActive(true);
+            }
+        }
     }
+
+    /*private void OnValidate()
+    {
+        Debug.DrawRay(transform.position - (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from knees
+        Debug.DrawRay(transform.position + (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from head
+    }*/
 
     public bool FootRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - (Vector3.up * .25f), -Vector2.right * transform.localScale.x, 10f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
         return hit;
     }
 
     public bool HeadRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 10f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
         return hit;
     }
 

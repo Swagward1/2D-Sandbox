@@ -743,15 +743,18 @@ public class WorldGen : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(Time.timeScale == 1)
+            if(player.inventoryShowing == false)
             {
-                Time.timeScale = 0;
-                Debug.Log("Paused");
-            }
-            else if(Time.timeScale == 0)
-            {
-                Time.timeScale = 1;
-                Debug.Log("Unpaused");
+                if(Time.timeScale == 1)
+                {
+                    Time.timeScale = 0;
+                    Debug.Log("Paused");
+                }
+                else if(Time.timeScale == 0)
+                {
+                    Time.timeScale = 1;
+                    Debug.Log("Unpaused");
+                }
             }
         }
     }

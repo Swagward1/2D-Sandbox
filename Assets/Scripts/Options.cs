@@ -6,15 +6,19 @@ public class Options : MonoBehaviour
 {
     public GameObject options;
     public bool optionsMenuShowing;
+    public PlayerControl player;
 
-    private void Update()
+    public void OptionsMenu()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             if(optionsMenuShowing == false)
             {
-                optionsMenuShowing = true;
-                options.SetActive(true);
+                if(player.inventoryShowing == false)
+                {
+                    optionsMenuShowing = true;
+                    options.SetActive(true);
+                }
             }
             else if(optionsMenuShowing)
             {
