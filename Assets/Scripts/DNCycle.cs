@@ -6,7 +6,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 public class DNCycle : MonoBehaviour
 {
     [SerializeField] private Gradient lightCol;
-    [SerializeField] private GameObject light;
+    [SerializeField] private GameObject lightObj;
 
     private int days;
 
@@ -32,6 +32,6 @@ public class DNCycle : MonoBehaviour
             canChangeDay = true;
 
         time += Time.deltaTime;
-        light.GetComponent<Light2D>().color = lightCol.Evaluate(time * .002f);
+        lightObj.GetComponent<Light2D>().color = lightCol.Evaluate(time * .002f);
     }
 }

@@ -12,17 +12,18 @@ public class WorldGen : MonoBehaviour
     public float groundLightThreshold = .7f;
     public float airLightThreshold = .85f;
     public float lightRadius = 7f;
+    public bool smoothLighting;
     List<Vector2Int> unlitBlocks = new List<Vector2Int>();
 
     [Header("Player Misc")]
-    public PlayerControl player;
-    public CamControl mainCam;
-    public GameObject tileDrop;
+    [SerializeField]private PlayerControl player;
+    [SerializeField]private CamControl mainCam;
+    [SerializeField]private GameObject tileDrop;
 
     [Header("World Stuff")]
     public TileAtlas tileAtlas;
-    public TileClass placeableTile;
-    public float seed;
+    //public TileClass placeableTile;
+    private float seed;
     public BiomeClass[] biomes;
 
     [Header("Biomes")]
@@ -42,7 +43,7 @@ public class WorldGen : MonoBehaviour
     public float terrainFreq = .05f;
     public Texture2D caveNoiseTexture;
 
-    [Header("Ores")]   
+    [Header("World Lists")]   
     public OreClass[] ores;
 
     public GameObject[] worldChunks;
@@ -116,12 +117,19 @@ public class WorldGen : MonoBehaviour
         mainCam.worldSize = worldSize;
         player.Spawn();
 
-        //RefreshChunks();
+        RefreshChunks();
     }
 
     void Update()
     {
-        //RefreshChunks();
+        RefreshChunks();
+        
+        if(smoothLighting)
+            worldTilesMap.filterMode = FilterMode.Point;
+        else
+            worldTilesMap.filterMode = FilterMode.Bilinear;
+
+        GamePause();
     }
 
     void RefreshChunks()
@@ -729,5 +737,22 @@ public class WorldGen : MonoBehaviour
 
         worldTilesMap.Apply();
         unlitBlocks.Add(new Vector2Int(x, y));
+    }
+
+    public void GamePause()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                Debug.Log("Paused");
+            }
+            else if(Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                Debug.Log("Unpaused");
+            }
+        }
     }
 }

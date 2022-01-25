@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -10,11 +11,15 @@ public class PlayerControl : MonoBehaviour
     public GameObject hotBarSelector;
     public GameObject heldItem;
 
-    public Inventory inventory;
     public bool inventoryShowing = false;
+    public bool optionsShowing = false;
 
+    //referenced scripts
+    public Inventory inventory;
+    public Options options;
     public ItemClass selectedItem;
-    [SerializeField]public TileClass tile;
+    //[SerializeField]public TileClass tile;
+    public WorldGen terrainGenerator;
     
     public int playerReach;
     public Vector2Int mousePos;
@@ -32,7 +37,6 @@ public class PlayerControl : MonoBehaviour
 
     [HideInInspector]
     public Vector2 spawnPos;
-    public WorldGen terrainGenerator;
 
 
     private void Start()
@@ -41,6 +45,7 @@ public class PlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
 
         inventory = GetComponent<Inventory>();
+        options = GetComponent<Options>();
     }
 
     public void Spawn()
@@ -84,21 +89,27 @@ public class PlayerControl : MonoBehaviour
 
         horizontal = Input.GetAxis("Horizontal");
 
-        hit = Input.GetMouseButton(0);
-        place = Input.GetMouseButton(1);
+        hit = Input.GetMouseButtonDown(0);
+        place = Input.GetMouseButtonDown(1);
 
         //scrolls through hotbar slots
         if(Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            //increase but dont go over the limit
-            if(selectedSlotIndex < inventory.inventoryWidth - 1)
-                selectedSlotIndex += 1;
+            if(Time.timeScale == 1)
+            {
+                //increase but dont go over the limit
+                if(selectedSlotIndex < inventory.inventoryWidth - 1)
+                    selectedSlotIndex += 1;
+            }
         }
         else if(Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            //decrease down to zero
-            if(selectedSlotIndex > 0)
+            if(Time.timeScale == 1)
+            {
+                //decrease down to zero
+                if(selectedSlotIndex > 0)
                 selectedSlotIndex -= 1;
+            }
         }
 
         //set selected slot in hotbar UI
@@ -130,17 +141,22 @@ public class PlayerControl : MonoBehaviour
         {
             if (place)
             {
-                if (selectedItem != null)
+                if(Time.timeScale == 1)
                 {
-                    if(selectedItem.itemName.ToLower().Contains("ingot"))
+                    if (selectedItem != null)
                     {
-                        return;
-                    }
-                    
-                    else if (selectedItem.itemType == ItemClass.ItemType.block)
-                    {
-                        if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
-                            inventory.Remove(selectedItem);
+                        if(selectedItem.itemName.ToLower().Contains("ingot"))
+                        {
+                            return;
+                        }
+                        
+                        else if (selectedItem.itemType == ItemClass.ItemType.block)
+                        {
+                            if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
+                                inventory.Remove(selectedItem);
+                                //Debug.Log("Place triggered at:");
+                                //Debug.Log(mousePos);
+                        }
                     }
                 }
             }
@@ -150,9 +166,14 @@ public class PlayerControl : MonoBehaviour
         {
             if(hit)
             {
-                Debug.Log(hit);
-                //terrainGenerator.RemoveTile(mousePos.x, mousePos.y); //not needed
-                terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+                if(Time.timeScale == 1)
+                {
+                    Debug.Log(hit);
+                    //terrainGenerator.RemoveTile(mousePos.x, mousePos.y); //not needed
+                    terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+                    //Debug.Log("Hit triggered at:");
+                    //Debug.Log(mousePos);
+                }
             }
         }
 
@@ -167,19 +188,19 @@ public class PlayerControl : MonoBehaviour
 
     private void OnValidate()
     {
-        Debug.DrawRay(transform.position - (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from knees
+        Debug.DrawRay(transform.position - (Vector3.up * .25f), -Vector2.right, Color.white, 10f); //draw ray from knees
         Debug.DrawRay(transform.position + (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from head
     }
 
     public bool FootRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position - (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position - (Vector3.up * .25f), -Vector2.right * transform.localScale.x, 10f, layerMask);
         return hit;
     }
 
     public bool HeadRaycast()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 10f, layerMask);
         return hit;
     }
 

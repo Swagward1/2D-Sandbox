@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ToolClass", menuName = "Tool Class")]
 public class ToolClass : ScriptableObject
 {
-    public string name;
+    public string toolName;
     public Sprite sprite;
     public ItemClass.ToolType toolType;
 }

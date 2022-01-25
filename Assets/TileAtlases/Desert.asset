@@ -19,6 +19,7 @@ MonoBehaviour:
   leaves: {fileID: 0}
   trunk: {fileID: 11400000, guid: 5ac4d6154ceac8f4296630ff982f8fdc, type: 2}
   tallGrass: {fileID: 11400000, guid: b962fa7731b12a44a8f7a99d76ba68bb, type: 2}
+  bedrock: {fileID: 11400000, guid: 21a1059f43f7fa84b88ac8dc052d3a30, type: 2}
   coal: {fileID: 0}
   iron: {fileID: 0}
   gold: {fileID: 0}

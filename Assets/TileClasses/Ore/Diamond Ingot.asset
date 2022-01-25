@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0389744643b8f2e4086093884cffe957, type: 3}
-  m_Name: Coal Ingot 1
+  m_Name: Diamond Ingot
   m_EditorClassIdentifier: 
   tileName: Diamond_Ingot
   wallVariant: {fileID: 0}

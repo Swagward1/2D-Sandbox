@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+    [Header("Starter Tools")]
     public ToolClass starter_Pickaxe;
     public ToolClass starter_Axe;
     public ToolClass starter_Shovel;
     public ToolClass starter_Hammer;
     
+    [Header("Inventory Positioning")]
     public Vector2 inventoryOffset;
     public Vector2 hotbarOffset;
     public Vector2 multiplier;
 
+    [Header("Inventory Customisation ")]
     public GameObject inventoryUI;
     public GameObject hotbarUI;
     public GameObject inventorySlotPrefab;
-
     public int inventoryWidth;
     public int inventoryHeight;
     public int stackLimit = 64;
+
 
     public InventorySlot[,] inventorySlots;
     public InventorySlot[] hotbarSlots;
