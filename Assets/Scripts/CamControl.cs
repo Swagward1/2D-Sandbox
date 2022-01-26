@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CamControl : MonoBehaviour
 {
+    public float orthoBorderSize;
     public float moveSpeed;
     [Range(0, 1)]
     public float smoothTime;
@@ -29,7 +30,7 @@ public class CamControl : MonoBehaviour
         pos.x = Mathf.Lerp(pos.x, playerTransform.position.x, smoothTime);
         pos.y = Mathf.Lerp(pos.y, playerTransform.position.y + 2, smoothTime);
 
-        pos.x = Mathf.Clamp(pos.x, 0 + (orthoSize * 1.8f), worldSize - (orthoSize * 1.8f));
+        pos.x = Mathf.Clamp(pos.x, 0 + (orthoSize * orthoBorderSize), worldSize - (orthoSize * orthoBorderSize));
 
         GetComponent<Transform>().position = pos;
     }
