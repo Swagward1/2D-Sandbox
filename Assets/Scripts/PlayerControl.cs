@@ -74,11 +74,11 @@ public class PlayerControl : MonoBehaviour
         }
 
         //autojump
-        if(FootRaycast() && !HeadRaycast() && movement.x != 0)
+        /*if(FootRaycast() && !HeadRaycast() && movement.x != 0)
         {
             if(onGround)
                 movement.y = jumpForce * .75f; //autojump multiplier
-        }
+        }*/
 
         rb2.velocity = movement;
     }
@@ -88,8 +88,8 @@ public class PlayerControl : MonoBehaviour
 
         horizontal = Input.GetAxis("Horizontal");
 
-        hit = Input.GetMouseButtonDown(0);
-        place = Input.GetMouseButtonDown(1);
+        hit = Input.GetMouseButton(0);
+        place = Input.GetMouseButton(1);
 
         //scrolls through hotbar slots
         if(Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -107,7 +107,7 @@ public class PlayerControl : MonoBehaviour
             {
                 //decrease down to zero
                 if(selectedSlotIndex > 0)
-                selectedSlotIndex -= 1;
+                    selectedSlotIndex -= 1;
             }
         }
 

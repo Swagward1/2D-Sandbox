@@ -199,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128225381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 64, y: 64, z: 0}
+  m_LocalScale: {x: 128, y: 128, z: 1}
   m_Children: []
   m_Father: {fileID: 1858712478}
   m_RootOrder: 3
@@ -270,7 +270,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 179155264}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -582,7 +582,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632650303}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1159,7 +1159,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839711619}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1355,22 +1355,22 @@ MonoBehaviour:
     smallTree: 5
     largeTree: 11
     ores:
-    - name: 
+    - name: Coal
       frequency: 0
       size: 0
       maxSpawnHeight: 0
       distributionTexture: {fileID: 0}
-    - name: 
+    - name: Iron
       frequency: 0
       size: 0
       maxSpawnHeight: 0
       distributionTexture: {fileID: 0}
-    - name: 
+    - name: Gold
       frequency: 0
       size: 0
       maxSpawnHeight: 0
       distributionTexture: {fileID: 0}
-    - name: 
+    - name: Diamond
       frequency: 0
       size: 0
       maxSpawnHeight: 0
@@ -1419,9 +1419,9 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 6554
-    ctime1: 16384
-    ctime2: 55705
+    ctime0: 9830
+    ctime1: 22937
+    ctime2: 52428
     ctime3: 65535
     ctime4: 65535
     ctime5: 0
@@ -1441,7 +1441,7 @@ MonoBehaviour:
   biomeMap: {fileID: 0}
   chunkSize: 16
   removeChunkRender: 16
-  worldSize: 129
+  worldSize: 128
   heightAdd: 64
   caveGen: 1
   caveFreq: 0.06
@@ -1994,7 +1994,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521614463}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

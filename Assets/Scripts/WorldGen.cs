@@ -117,6 +117,8 @@ public class WorldGen : MonoBehaviour
         mainCam.worldSize = worldSize;
         player.Spawn();
 
+
+        Time.timeScale = 1;
         RefreshChunks();
     }
 
@@ -252,7 +254,7 @@ public class WorldGen : MonoBehaviour
     public void TerrainGen()
     {
         TileClass tileClass;
-        for(int x = 0; x < worldSize - 1; x++)
+        for(int x = 0; x < worldSize + 10; x++)
         {
             float height;
             for(int y = 0; y < worldSize; y++)
