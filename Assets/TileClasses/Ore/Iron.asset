@@ -15,11 +15,9 @@ MonoBehaviour:
   tileName: Iron
   wallVariant: {fileID: 11400000, guid: 3dc35095f6c62da41bb4d3f95cd2c7de, type: 2}
   tileSprites:
-  - {fileID: 21300000, guid: da4ff2449a1b08b438b5c80abfcf9a49, type: 3}
-  - {fileID: 21300000, guid: 08d4d760040e4b24fb22d10521a3b4a6, type: 3}
+  - {fileID: 21300000, guid: 3de9dbd4af19a0a4f9d7ae17ac6df832, type: 3}
   inBackdrop: 0
   tileDrop: {fileID: 11400000}
   toolToBreak: 0
   naturallyPlaced: 1
   isStackable: 1
-  isPlaceable: 1

@@ -1,8 +1,8 @@
-using System.Collections;
 using UnityEngine;
 
 public class DroppedTileControl : MonoBehaviour
 {
+    [HideInInspector]
     public ItemClass item;
 
     private void OnTriggerEnter2D(Collider2D col)

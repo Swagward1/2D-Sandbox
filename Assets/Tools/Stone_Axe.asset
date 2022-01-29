@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35297bd331a011b4eb89443510d077b4, type: 3}
   m_Name: Stone_Axe
   m_EditorClassIdentifier: 
-  name: Stone Axe
-  sprite: {fileID: 21300000, guid: e32ee560964938540a289679d7153c87, type: 3}
+  toolName: 
+  sprite: {fileID: 21300000, guid: 82cbc21cb707fac409e334ca22df653f, type: 3}
   toolType: 1

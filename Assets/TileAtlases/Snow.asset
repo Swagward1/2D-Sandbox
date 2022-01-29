@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grass: {fileID: 11400000, guid: fa1714c8a81449d4590d5a326028020c, type: 2}
   dirt: {fileID: 11400000, guid: fa1714c8a81449d4590d5a326028020c, type: 2}
-  stone: {fileID: 11400000, guid: fa1714c8a81449d4590d5a326028020c, type: 2}
   log: {fileID: 0}
   leaves: {fileID: 0}
   trunk: {fileID: 0}
   tallGrass: {fileID: 11400000, guid: 228340b81fabde24383208fe89354f16, type: 2}
-  coal: {fileID: 0}
-  iron: {fileID: 0}
-  gold: {fileID: 0}
-  diamond: {fileID: 0}
+  stone: {fileID: 11400000, guid: fa1714c8a81449d4590d5a326028020c, type: 2}
+  coal: {fileID: 11400000, guid: e3f00bea94d09f845b48a28cf47df559, type: 2}
+  iron: {fileID: 11400000, guid: ddd125788526bad48b1ca3f9e284cfab, type: 2}
+  gold: {fileID: 11400000, guid: 7c3c9c360711ed94aaad3aacb73c1743, type: 2}
+  diamond: {fileID: 11400000, guid: af16c69361eb63645980226632758f97, type: 2}
+  bedrock: {fileID: 11400000, guid: 21a1059f43f7fa84b88ac8dc052d3a30, type: 2}

@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -15,10 +12,8 @@ public class PlayerControl : MonoBehaviour
     public bool optionsMenuShowing = false;
     public GameObject options;
 
-    //referenced scripts
     public Inventory inventory;
     public ItemClass selectedItem;
-    //[SerializeField]public TileClass tile;
     public WorldGen terrainGenerator;
     
     public int playerReach;
@@ -61,8 +56,8 @@ public class PlayerControl : MonoBehaviour
 
         //flip player on rotation
         if(horizontal > 0)
-
             transform.localScale = new Vector3(-1, 1, 1);
+
         else if(horizontal < 0)
             transform.localScale = new Vector3(1, 1, 1);
 
@@ -74,22 +69,21 @@ public class PlayerControl : MonoBehaviour
         }
 
         //autojump
-        /*if(FootRaycast() && !HeadRaycast() && movement.x != 0)
+        if(FootRaycast() && !HeadRaycast() && movement.x != 0)
         {
             if(onGround)
                 movement.y = jumpForce * .75f; //autojump multiplier
-        }*/
+        }
 
         rb2.velocity = movement;
     }
 
     private void Update()
     {
-
         horizontal = Input.GetAxis("Horizontal");
 
-        hit = Input.GetMouseButton(0);
-        place = Input.GetMouseButton(1);
+        hit = Input.GetMouseButtonDown(0);
+        place = Input.GetMouseButtonDown(1);
 
         //scrolls through hotbar slots
         if(Input.GetAxis("Mouse ScrollWheel") < 0)
@@ -107,7 +101,7 @@ public class PlayerControl : MonoBehaviour
             {
                 //decrease down to zero
                 if(selectedSlotIndex > 0)
-                    selectedSlotIndex -= 1;
+                selectedSlotIndex -= 1;
             }
         }
 
@@ -118,6 +112,7 @@ public class PlayerControl : MonoBehaviour
             heldItem.GetComponent<SpriteRenderer>().sprite = selectedItem.sprite;
             if(selectedItem.itemType == ItemClass.ItemType.block)
                 heldItem.transform.localScale = new Vector3(-.5f, .5f, .5f);
+
             else
                 heldItem.transform.localScale = new Vector3(-1, 1, 1);
         }
@@ -127,6 +122,7 @@ public class PlayerControl : MonoBehaviour
         //set selected item
         if(inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1] != null)
             selectedItem = inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1].item;
+
         else
             selectedItem = null;
 
@@ -146,16 +142,12 @@ public class PlayerControl : MonoBehaviour
                     if (selectedItem != null)
                     {
                         if(selectedItem.itemName.ToLower().Contains("ingot"))
-                        {
                             return;
-                        }
                         
                         else if (selectedItem.itemType == ItemClass.ItemType.block)
                         {
                             if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
-                                inventory.Remove(selectedItem);
-                                //Debug.Log("Place triggered at:");
-                                //Debug.Log(mousePos);
+                                    inventory.Remove(selectedItem);
                         }
                     }
                 }
@@ -168,11 +160,9 @@ public class PlayerControl : MonoBehaviour
             {
                 if(Time.timeScale == 1)
                 {
-                    Debug.Log(hit);
-                    //terrainGenerator.RemoveTile(mousePos.x, mousePos.y); //not needed
+                    //Debug.Log(hit);
                     terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
-                    //Debug.Log("Hit triggered at:");
-                    //Debug.Log(mousePos);
+
                 }
             }
         }

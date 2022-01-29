@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 
 [System.Serializable]
@@ -8,7 +7,7 @@ public class ItemClass
     {
         block,
         tool
-    };
+    }
 
     public enum ToolType
     {
@@ -18,7 +17,7 @@ public class ItemClass
         hammer,
         none,
         unbreakable
-    };
+    }
 
     public ItemType itemType;
     public ToolType toolType;
@@ -26,7 +25,6 @@ public class ItemClass
     public string itemName;
     public Sprite sprite;
     public bool isStackable;
-    //public bool isPlaceable;
 
     public TileClass tile;
     public ToolClass tool;

@@ -15,11 +15,9 @@ MonoBehaviour:
   tileName: Gold
   wallVariant: {fileID: 11400000, guid: 3dc35095f6c62da41bb4d3f95cd2c7de, type: 2}
   tileSprites:
-  - {fileID: 21300000, guid: 53a4e607ac7bcd441b6f3faf92bd1fe6, type: 3}
-  - {fileID: 21300000, guid: 23cc4dedbfe0c614f9e1ae7f6bd4c73a, type: 3}
+  - {fileID: 21300000, guid: e3a529c790a73ad47af0b5eb889fcc79, type: 3}
   inBackdrop: 0
   tileDrop: {fileID: 11400000}
   toolToBreak: 0
   naturallyPlaced: 1
   isStackable: 1
-  isPlaceable: 1

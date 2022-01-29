@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -59,14 +58,12 @@ public class Inventory : MonoBehaviour
         }
 
         //setup hotbar afterwards
-
         for (int x = 0; x < inventoryWidth; x++)
         {
             GameObject hotbarSlot = Instantiate(inventorySlotPrefab, hotbarUI.transform.GetChild(0).transform);
             hotbarSlot.GetComponent<RectTransform>().localPosition = new  Vector3((x * multiplier.x) + hotbarOffset.x, hotbarOffset.y);
             hotbarUISlots[x] = hotbarSlot;
             hotbarSlots[x] = null;
-
         }
     }
 
@@ -84,7 +81,6 @@ public class Inventory : MonoBehaviour
 
                     uiSlots[x, y].transform.GetChild(1).GetComponent<Text>().text = "0";
                     uiSlots[x, y].transform.GetChild(1).GetComponent<Text>().enabled = false;
-                    
                 }
 
                 else
@@ -96,6 +92,7 @@ public class Inventory : MonoBehaviour
                     {
                         if(inventorySlots[x, y].item.tile.inBackdrop)
                             uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().color = new Color(.5f, .5f, .5f);
+
                         else
                             uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().color = Color.white; 
                     }
@@ -116,7 +113,6 @@ public class Inventory : MonoBehaviour
 
                 hotbarUISlots[x].transform.GetChild(1).GetComponent<Text>().text = "0";
                 hotbarUISlots[x].transform.GetChild(1).GetComponent<Text>().enabled = false;
-                
             }
             else
             {
@@ -127,13 +123,13 @@ public class Inventory : MonoBehaviour
                     {
                         if(inventorySlots[x, inventoryHeight - 1].item.tile.inBackdrop)
                             hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().color = new Color(.5f, .5f, .5f);
+
                         else
                             hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().color = Color.white; 
                     }
 
                 hotbarUISlots[x].transform.GetChild(1).GetComponent<Text>().text = inventorySlots[x, inventoryHeight - 1].quantity.ToString();
                 hotbarUISlots[x].transform.GetChild(1).GetComponent<Text>().enabled = true;
-                
             }
         }
     }
@@ -155,6 +151,7 @@ public class Inventory : MonoBehaviour
             {
                 if (added)
                     break;
+
                 for (int x = 0; x < inventoryWidth; x++)
                 {
                     if (inventorySlots[x, y] == null)
@@ -167,7 +164,7 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
-
+        
         UpdateInventoryUI();
         return added;
     }
@@ -218,5 +215,4 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
-    
 }

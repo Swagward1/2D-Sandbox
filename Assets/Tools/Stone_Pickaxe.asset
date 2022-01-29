@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35297bd331a011b4eb89443510d077b4, type: 3}
   m_Name: Stone_Pickaxe
   m_EditorClassIdentifier: 
-  name: Stone Pickaxe
-  sprite: {fileID: 21300000, guid: b1c52475615b1954cbd644e748b18316, type: 3}
+  toolName: 
+  sprite: {fileID: 21300000, guid: 2fd652b338687e84ba36ba9c613eba82, type: 3}
   toolType: 0

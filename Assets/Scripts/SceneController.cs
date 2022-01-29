@@ -9,6 +9,6 @@ public class SceneController : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(sceneName); //Loads scene with specific name
     }
 }

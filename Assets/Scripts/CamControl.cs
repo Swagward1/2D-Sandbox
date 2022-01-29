@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CamControl : MonoBehaviour
@@ -8,13 +6,10 @@ public class CamControl : MonoBehaviour
     public float moveSpeed;
     [Range(0, 1)]
     public float smoothTime;
-
     public Transform playerTransform;
-
     [HideInInspector]
     public int worldSize;
-
-    private float orthoSize;
+    public float orthoSize;
 
     public void Spawn(Vector3 pos)
     {

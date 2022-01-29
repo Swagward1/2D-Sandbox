@@ -1,11 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-//https://youtu.be/FlzYOv4TCDE?list=PLn1X2QyVjFVDE9syarF1HoUFwB_3K7z2y&t=366
+using UnityEngine.UI;
 
 public class WorldGen : MonoBehaviour
 {
+
+    #region Project Vars
+    [Header("Framerate")]
+    public bool showFPS;
+    public FPSDisplay frames;
+
     [Header("Lighting")]
     public Texture2D worldTilesMap;
     public Material lightShader;
@@ -15,15 +19,19 @@ public class WorldGen : MonoBehaviour
     public bool smoothLighting;
     List<Vector2Int> unlitBlocks = new List<Vector2Int>();
 
-    [Header("Player Misc")]
-    [SerializeField]private PlayerControl player;
-    [SerializeField]private CamControl mainCam;
-    [SerializeField]private GameObject tileDrop;
+    //Player Configs
+    [HideInInspector]
+    public PlayerControl player;
+    [HideInInspector]
+    public CamControl mainCam;
+    [HideInInspector]
+    public GameObject tileDrop;
+    //[HideInInspector]
 
     [Header("World Stuff")]
     public TileAtlas tileAtlas;
-    //public TileClass placeableTile;
-    private float seed;
+    [HideInInspector]
+    public float seed;
     public BiomeClass[] biomes;
 
     [Header("Biomes")]
@@ -32,10 +40,10 @@ public class WorldGen : MonoBehaviour
     public Texture2D biomeMap;
 
     [Header("World Generation")]
-    public int chunkSize = 32;
+    public int chunkSize = 16;
     public int removeChunkRender = 16;
     public int worldSize = 128;
-    public int heightAdd = 25;
+    public int heightAdd = 64;
     public bool caveGen = true;
 
     [Header("Noise Settings")]
@@ -45,20 +53,20 @@ public class WorldGen : MonoBehaviour
 
     [Header("World Lists")]   
     public OreClass[] ores;
-
     public GameObject[] worldChunks;
-
     public GameObject[,] world_SceneObjects;
     public GameObject[,] world_BackdropObjects;
-
     public TileClass[,] world_BackdropTiles;
     public TileClass[,] world_SceneTiles;
-
     public BiomeClass curBiome;
     public Color[] biomeCols;
+    #endregion
 
     private void Start()
     {
+        if(Time.timeScale == 0)
+            Time.timeScale = 1;
+
         world_SceneTiles = new TileClass[worldSize, worldSize];
         world_BackdropTiles = new TileClass[worldSize, worldSize];
         world_SceneObjects = new GameObject[worldSize, worldSize];
@@ -81,7 +89,6 @@ public class WorldGen : MonoBehaviour
         }
         worldTilesMap.Apply();
         
-        //terrain stuff
         seed = Random.Range(-10000, 10000);
         //Debug.Log("World Seed = " + seed);
         
@@ -117,8 +124,6 @@ public class WorldGen : MonoBehaviour
         mainCam.worldSize = worldSize;
         player.Spawn();
 
-
-        Time.timeScale = 1;
         RefreshChunks();
     }
 
@@ -127,9 +132,14 @@ public class WorldGen : MonoBehaviour
         RefreshChunks();
         
         if(smoothLighting)
-            worldTilesMap.filterMode = FilterMode.Point;
-        else
             worldTilesMap.filterMode = FilterMode.Bilinear;
+        else
+            worldTilesMap.filterMode = FilterMode.Point;
+
+        if(showFPS)
+            frames.display_Text.gameObject.SetActive(true);
+        else
+            frames.display_Text.gameObject.SetActive(false);
 
         GamePause();
     }
@@ -138,7 +148,7 @@ public class WorldGen : MonoBehaviour
     {
         for (int i = 0; i < worldChunks.Length; i++)
         {
-            if (Vector2.Distance(new Vector2((i * removeChunkRender) + (removeChunkRender / 2), 0), new Vector2(player.transform.position.x, 0)) > Camera.main.orthographicSize * 4f)
+            if (Vector2.Distance(new Vector2((i * chunkSize) + (chunkSize / 2), 0), new Vector2(player.transform.position.x, 0)) > Camera.main.orthographicSize * 4f)
                 worldChunks[i].SetActive(false);
             else
                 worldChunks[i].SetActive(true);
@@ -159,7 +169,6 @@ public class WorldGen : MonoBehaviour
                 biomeMap.SetPixel(x, y, col);
             }
         }
-
         biomeMap.Apply();
     }
 
@@ -193,7 +202,6 @@ public class WorldGen : MonoBehaviour
                 }
             }
         }
-        
         caveNoiseTexture.Apply();      
     }
 
@@ -227,7 +235,6 @@ public class WorldGen : MonoBehaviour
                     noiseTexture.SetPixel(x, y, Color.black);
             }
         }
-
         noiseTexture.Apply();
     }
 
@@ -254,7 +261,7 @@ public class WorldGen : MonoBehaviour
     public void TerrainGen()
     {
         TileClass tileClass;
-        for(int x = 0; x < worldSize + 10; x++)
+        for(int x = 0; x < worldSize; x++)
         {
             float height;
             for(int y = 0; y < worldSize; y++)
@@ -265,44 +272,32 @@ public class WorldGen : MonoBehaviour
                 if(x == worldSize / 2)
                     player.spawnPos = new Vector2 (x, height + 2);
 
-                if(y >= height){
+                if(y >= height)
                     break;
-                }
 
                 if(y < height - curBiome.dirtHeight)
                 {
-
                     tileClass = curBiome.tileAtlas.stone;
 
                     if(ores[0].distributionTexture.GetPixel(x, y).r > .5f && height - y > ores[0].maxSpawnHeight)
-                    {
-                        tileClass = tileAtlas.coal;
-                    }
+                        tileClass = curBiome.tileAtlas.coal;
+
                     if(ores[1].distributionTexture.GetPixel(x, y).r > .5f && height - y > ores[1].maxSpawnHeight)
-                    {
-                        tileClass = tileAtlas.iron;
-                    }
+                        tileClass = curBiome.tileAtlas.iron;
+
                     if(ores[2].distributionTexture.GetPixel(x, y).r > .5f && height - y > ores[2].maxSpawnHeight)
-                    {
-                        tileClass = tileAtlas.gold;
-                    }
+                        tileClass = curBiome.tileAtlas.gold;
+
                     if(ores[3].distributionTexture.GetPixel(x, y).r > .5f && height - y > ores[3].maxSpawnHeight)
-                    {
-                        tileClass = tileAtlas.diamond;
-                    }
+                        tileClass = curBiome.tileAtlas.diamond;
                 }
 
                 else if(y < height - 1)
-                {
                     tileClass = curBiome.tileAtlas.dirt;
-                }
 
                 else
-                {
                     //top layer of surface
                     tileClass = curBiome.tileAtlas.grass;
-
-                }
 
                 if(y == 0)
                     //set bottom layer to bedrock
@@ -311,19 +306,14 @@ public class WorldGen : MonoBehaviour
                 if(caveGen && y > 0)
                 {
                     if(caveNoiseTexture.GetPixel(x, y).r > .5f)
-                    {
                         PlaceTile(tileClass, x, y, true);
-                    }  
+
                     else if(tileClass.wallVariant != null)
-                    {
                         PlaceTile(tileClass.wallVariant, x, y, true);
-                    }
                 }
 
                 else
-                {
                     PlaceTile(tileClass, x, y, true);
-                }
                 
                 if(y >= height - 1)
                 {
@@ -333,10 +323,8 @@ public class WorldGen : MonoBehaviour
                         //gen tree
                         if(GetTileFromWorld(x, y))  
                             if(curBiome.biomeName == "Desert")
-                            {
                                 //gen cactus
-                                CreateCacti(curBiome.tileAtlas, Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1);
-                            } 
+                                CreateCacti(curBiome.tileAtlas, Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1); 
 
                             else                       
                                 CreateTree(Random.Range(curBiome.smallTree, curBiome.largeTree),x, y + 1);
@@ -348,10 +336,8 @@ public class WorldGen : MonoBehaviour
                         {
                             //gen grass
                             if(GetTileFromWorld(x, y))
-                            {   
                                 if(curBiome.tileAtlas.tallGrass != null)
-                                    PlaceTile(curBiome.tileAtlas.tallGrass, x, y + 1, true);
-                            }   
+                                    PlaceTile(curBiome.tileAtlas.tallGrass, x, y + 1, true);  
                         }
                     }
                 }
@@ -379,18 +365,12 @@ public class WorldGen : MonoBehaviour
                 //decide a random height for the tree
                 PlaceTile(tileAtlas.log, x, (y + 1) + i, true);
             }
-        //leaves
+        #region Leaves
         PlaceTile(tileAtlas.leaves, x, y + treeHeight + 1, true);
         PlaceTile(tileAtlas.leaves, x + 1, y + treeHeight + 1, true);
         PlaceTile(tileAtlas.leaves, x - 1, y + treeHeight + 1, true);
         PlaceTile(tileAtlas.leaves, x, y + treeHeight + 2, true);
-        
-        /*fixed problem with tree generation:
-        code generates the trunk of the tree first, then from that it randomises the tree length
-        but once the tree length is determined it runs and places down those logs. However, it didnt
-        take the trunk into the code, so to fix it i pretended the trunks y pos was 0, then made it so 
-        the tree builds up from y = 0, so no logs share a block with the trunk.
-        */
+        #endregion
     }
 
     public bool RemoveTileWithTool(int x, int y, ItemClass item)
@@ -433,12 +413,8 @@ public class WorldGen : MonoBehaviour
             {
                 //if tile is naturally placed
                 if(tile.naturallyPlaced)
-                {
                     PlaceTile(tile.wallVariant, x, y, true);
-                }
             }
-
-            //Destroy(worldTileObjects[worldTiles.Indexof(new Vector2(x, y))]);
 
             //drop block as collectable
             if(tile.tileDrop)
@@ -456,10 +432,8 @@ public class WorldGen : MonoBehaviour
                 worldTilesMap.Apply();
             }
             
-
             Destroy(GetObjectTileFromWorld(x, y));
             RemoveObjectFromWorld(x, y);
-
         }
     }
 
@@ -491,6 +465,7 @@ public class WorldGen : MonoBehaviour
                     }
                 }
             }
+
             else
             {
                 if(GetTileFromWorld(x + 1, y) || 
@@ -516,7 +491,6 @@ public class WorldGen : MonoBehaviour
                 }
             }
         }
-
         return false;
     }
 
@@ -541,13 +515,10 @@ public class WorldGen : MonoBehaviour
                 newTile.GetComponent<SpriteRenderer>().sortingOrder = -10;
 
                 if (tile.name.ToLower().Contains("backdrop"))
-                {
                     newTile.GetComponent<SpriteRenderer>().color = new Color(.5f, .5f, .5f);
-                }
+
                 else
-                {
                     worldTilesMap.SetPixel(x, y, Color.white);
-                }
             }
             else
             {
@@ -570,61 +541,46 @@ public class WorldGen : MonoBehaviour
     void AddTileToWorld(int x, int y, TileClass tile)
     {
         if(tile.inBackdrop)
-        {
             world_BackdropTiles[x, y] = tile;
-        }
+
         else
-        {
             world_SceneTiles[x, y] = tile;
-        }
     }
 
     void AddObjectToWorld(int x, int y, GameObject tileObject, TileClass tile)
     {
         if(tile.inBackdrop)
-        {
             world_BackdropObjects[x, y] = tileObject;
-        }
+
         else
-        {
             world_SceneObjects[x, y] = tileObject;
-        }
     }
 
     void RemoveTileFromWorld(int x, int y)
     {
         if(world_SceneTiles[x, y] != null)
-        {
             world_SceneTiles[x, y] = null;
-        }
+
         else if(world_BackdropTiles[x, y] != null)
-        {
             world_BackdropTiles[x, y] = null;
-        }
     }
 
     void RemoveObjectFromWorld(int x, int y)
     {
         if(world_SceneObjects[x, y] != null)
-        {
             world_SceneObjects[x, y] = null;
-        }
+
         else if(world_BackdropObjects[x, y] != null)
-        {
             world_BackdropObjects[x, y] = null;
-        }
     }
 
     GameObject GetObjectTileFromWorld(int x, int y)
     {
         if(world_SceneObjects[x, y] != null)
-        {
             return world_SceneObjects[x, y];
-        }
+
         else if(world_BackdropObjects[x, y] != null)
-        {
             return world_BackdropObjects[x, y];
-        }
 
         return null;
     }
@@ -632,13 +588,10 @@ public class WorldGen : MonoBehaviour
     TileClass GetTileFromWorld(int x, int y)
     {
         if(world_SceneTiles[x, y] != null)
-        {
             return world_SceneTiles[x, y];
-        }
+
         else if(world_BackdropTiles[x, y] != null)
-        {
             return world_BackdropTiles[x, y];
-        }
 
         return null;
     }
@@ -671,14 +624,11 @@ public class WorldGen : MonoBehaviour
                             float targetIntensity = Mathf.Pow(thresh, dist) * intensity;
 
                             if (worldTilesMap.GetPixel(nx, ny).r < targetIntensity)
-                            {
                                 LightBlock(nx, ny, targetIntensity, iteration + 1);
-                            }
                         }
                     }
                 }
             }
-
             worldTilesMap.Apply();
         }
     }
@@ -729,14 +679,11 @@ public class WorldGen : MonoBehaviour
                     if (worldTilesMap.GetPixel(nx, ny) != null)
                     {
                         if (worldTilesMap.GetPixel(nx, ny).r < worldTilesMap.GetPixel(x, y).r)
-                        {
                             UnLightBlock(nx, ny, ix, iy);
-                        }
                     }
                 }
             }
         }
-
         worldTilesMap.Apply();
         unlitBlocks.Add(new Vector2Int(x, y));
     }
@@ -748,15 +695,12 @@ public class WorldGen : MonoBehaviour
             if(player.inventoryShowing == false)
             {
                 if(Time.timeScale == 1)
-                {
                     Time.timeScale = 0;
-                    Debug.Log("Paused");
-                }
+                    //Debug.Log("Paused");
+
                 else if(Time.timeScale == 0)
-                {
                     Time.timeScale = 1;
-                    Debug.Log("Unpaused");
-                }
+                    //Debug.Log("Unpaused");
             }
         }
     }
