@@ -6,6 +6,9 @@ public class WorldGen : MonoBehaviour
 {
 
     #region Project Vars
+    [Header("Leave seed empty to randomise it.")]
+    public float seed;
+
     [Header("Framerate")]
     public bool showFPS;
     public FPSDisplay frames;
@@ -20,18 +23,18 @@ public class WorldGen : MonoBehaviour
     List<Vector2Int> unlitBlocks = new List<Vector2Int>();
 
     //Player Configs
-    [HideInInspector]
+    //[HideInInspector]
     public PlayerControl player;
-    [HideInInspector]
+    //[HideInInspector]
     public CamControl mainCam;
-    [HideInInspector]
+    //[HideInInspector]
     public GameObject tileDrop;
     //[HideInInspector]
+    public PauseScene pauseGameplay;
 
     [Header("World Stuff")]
     public TileAtlas tileAtlas;
-    [HideInInspector]
-    public float seed;
+    //[HideInInspector]
     public BiomeClass[] biomes;
 
     [Header("Biomes")]
@@ -89,7 +92,8 @@ public class WorldGen : MonoBehaviour
         }
         worldTilesMap.Apply();
         
-        seed = Random.Range(-10000, 10000);
+        if(seed == 0)
+            seed = Random.Range(-10000, 10000);
         //Debug.Log("World Seed = " + seed);
         
         for (int i = 0; i < ores.Length; i++)
@@ -141,7 +145,7 @@ public class WorldGen : MonoBehaviour
         else
             frames.display_Text.gameObject.SetActive(false);
 
-        GamePause();
+        pauseGameplay.Pause();
     }
 
     void RefreshChunks()
@@ -326,8 +330,11 @@ public class WorldGen : MonoBehaviour
                                 //gen cactus
                                 CreateCacti(curBiome.tileAtlas, Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1); 
 
+                            else if(curBiome.biomeName == "Forest")
+                                CreateForestTree(Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1);
+
                             else                       
-                                CreateTree(Random.Range(curBiome.smallTree, curBiome.largeTree),x, y + 1);
+                                CreateSmallTree(Random.Range(curBiome.smallTree, curBiome.largeTree),x, y + 1);
                     }
                     else
                     {
@@ -357,7 +364,7 @@ public class WorldGen : MonoBehaviour
         }
     }
 
-    void CreateTree(int treeHeight, int x, int y)
+    void CreateSmallTree(int treeHeight, int x, int y)
     {
         PlaceTile(tileAtlas.trunk, x, y, true); //start of the tree
             for(int i = 0; i < treeHeight ; i++)
@@ -365,11 +372,30 @@ public class WorldGen : MonoBehaviour
                 //decide a random height for the tree
                 PlaceTile(tileAtlas.log, x, (y + 1) + i, true);
             }
-        #region Leaves
+        #region SmallTreeLeaves
         PlaceTile(tileAtlas.leaves, x, y + treeHeight + 1, true);
         PlaceTile(tileAtlas.leaves, x + 1, y + treeHeight + 1, true);
         PlaceTile(tileAtlas.leaves, x - 1, y + treeHeight + 1, true);
         PlaceTile(tileAtlas.leaves, x, y + treeHeight + 2, true);
+        #endregion
+    }
+
+    void CreateForestTree(int treeHeight, int x, int y)
+    {
+        PlaceTile(tileAtlas.trunk, x, y, true); //start of the tree
+            for(int i = 0; i < treeHeight ; i++)
+            { 
+                //decide a random height for the tree
+                PlaceTile(tileAtlas.log, x, (y + 1) + i, true);
+            }
+        #region ForestTreeLeaves
+        PlaceTile(tileAtlas.leaves, x, y + treeHeight + 1, true);
+        PlaceTile(tileAtlas.leaves, x + 1, y + treeHeight + 1, true);
+        PlaceTile(tileAtlas.leaves, x - 1, y + treeHeight + 1, true);
+        PlaceTile(tileAtlas.leaves, x, y + treeHeight + 2, true);
+        PlaceTile(tileAtlas.leaves, x + 1, y + treeHeight + 2, true);
+        PlaceTile(tileAtlas.leaves, x - 1, y + treeHeight + 2, true);
+        PlaceTile(tileAtlas.leaves, x, y + treeHeight + 3, true);
         #endregion
     }
 
@@ -468,6 +494,7 @@ public class WorldGen : MonoBehaviour
 
             else
             {
+                
                 if(GetTileFromWorld(x + 1, y) || 
                    GetTileFromWorld(x - 1, y) ||
                    GetTileFromWorld(x, y + 1) ||
@@ -494,7 +521,7 @@ public class WorldGen : MonoBehaviour
         return false;
     }
 
-    public void PlaceTile(TileClass tile, int x, int y, bool isNaturallyPlaced)
+    public void PlaceTile(TileClass tile, int x, int y, bool isNaturallyPlaced/*, bool inBackdrop*/)
     {
         if(x >= 0 && x <= worldSize && y >= 0 && y <= worldSize)
         {
@@ -688,7 +715,7 @@ public class WorldGen : MonoBehaviour
         unlitBlocks.Add(new Vector2Int(x, y));
     }
 
-    public void GamePause()
+    /*public void GamePause()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -703,5 +730,5 @@ public class WorldGen : MonoBehaviour
                     //Debug.Log("Unpaused");
             }
         }
-    }
+    }*/
 }

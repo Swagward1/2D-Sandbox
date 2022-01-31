@@ -4,10 +4,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     [Header("Starter Tools")]
-    public ToolClass starter_Pickaxe;
-    public ToolClass starter_Axe;
-    public ToolClass starter_Shovel;
-    public ToolClass starter_Hammer;
+    public ToolClass pickaxe;
+    public ToolClass axe;
+    //public ToolClass shovel;
+    public ToolClass hammer;
+    public TileClass woodPlanks;
     
     [Header("Inventory Positioning")]
     public Vector2 inventoryOffset;
@@ -37,10 +38,15 @@ public class Inventory : MonoBehaviour
 
         SetupUI();
         UpdateInventoryUI();
-        Add(new ItemClass(starter_Pickaxe));
-        Add(new ItemClass(starter_Axe));
-        Add(new ItemClass(starter_Shovel));
-        Add(new ItemClass(starter_Hammer));
+        Add(new ItemClass(pickaxe));
+        Add(new ItemClass(axe));
+        //Add(new ItemClass(shovel));
+        Add(new ItemClass(hammer));
+
+        for (int i = 0; i < 75; i++)
+        {
+            Add(new ItemClass(woodPlanks)); //give player 75 wood planks on start up
+        }
     }
 
     void SetupUI()

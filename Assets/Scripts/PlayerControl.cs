@@ -9,8 +9,8 @@ public class PlayerControl : MonoBehaviour
     public GameObject heldItem;
 
     public bool inventoryShowing = false;
-    public bool optionsMenuShowing = false;
-    public GameObject options;
+    public bool pauseMenuShowing = false;
+    public GameObject pauseCanvas;
 
     public Inventory inventory;
     public ItemClass selectedItem;
@@ -41,6 +41,7 @@ public class PlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();
 
         inventory = GetComponent<Inventory>();
+        //pauseCanvas = GetComponent<GameObject>();
     }
 
     public void Spawn()
@@ -86,6 +87,8 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
+        //TileClass tileClass;
+
         horizontal = Input.GetAxis("Horizontal");
 
         hit = Input.GetMouseButtonDown(0);
@@ -137,9 +140,10 @@ public class PlayerControl : MonoBehaviour
         else
             selectedItem = null;
 
+        //open inventory
         if(Input.GetKeyDown(KeyCode.E))
         {
-            if(optionsMenuShowing == false)
+            if(pauseMenuShowing == false)
                 inventoryShowing = !inventoryShowing;
         }
 
@@ -157,7 +161,14 @@ public class PlayerControl : MonoBehaviour
                         
                         else if (selectedItem.itemType == ItemClass.ItemType.block)
                         {
-                            if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
+                            if(Input.GetKeyDown(KeyCode.Tab))
+                            {
+                                //find selected item
+                                //turn it into a wall variant
+                                //place it with correct lighting applied
+                            }
+
+                            if(terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
                                     inventory.Remove(selectedItem);
                         }
                     }
@@ -186,28 +197,26 @@ public class PlayerControl : MonoBehaviour
         anim.SetFloat("horizontal", horizontal);
         anim.SetBool("hit", hit || place);
 
-        
-
-        OptionsMenu();
+        PauseScreen();
     }
 
-    public void OptionsMenu()
+    public void PauseScreen()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(optionsMenuShowing == false)
+            if(pauseMenuShowing == false)
             {
                 if(inventoryShowing == false)
                 {
-                    optionsMenuShowing = true;
-                    options.SetActive(true);
+                    pauseMenuShowing = true;
+                    pauseCanvas.SetActive(true);
                     inventory.hotbarUI.SetActive(false);
                 }
             }
-            else if(optionsMenuShowing)
+            else if(pauseMenuShowing)
             {
-                optionsMenuShowing = !optionsMenuShowing;
-                options.SetActive(false);
+                pauseMenuShowing = !pauseMenuShowing;
+                pauseCanvas.SetActive(false);
                 inventory.hotbarUI.SetActive(true);
             }
         }

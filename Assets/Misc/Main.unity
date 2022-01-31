@@ -612,13 +612,41 @@ PrefabInstance:
     m_TransformParent: {fileID: 664873508}
     m_Modifications:
     - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: axe
+      value: 
+      objectReference: {fileID: 11400000, guid: b77d5515032469247822c2b4b6a03ab0, type: 2}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: wood
+      value: 
+      objectReference: {fileID: 11400000, guid: dc962cfef70195f4f85a9cfc3255d789, type: 2}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: hammer
+      value: 
+      objectReference: {fileID: 11400000, guid: 065fa31de975f9443b9784b65695de8a, type: 2}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: pickaxe
+      value: 
+      objectReference: {fileID: 11400000, guid: 20544c08022d7a744989f59064330065, type: 2}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: hotbarUI
       value: 
       objectReference: {fileID: 2010844557}
     - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: stackLimit
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: woodPlanks
+      value: 
+      objectReference: {fileID: 11400000, guid: dc962cfef70195f4f85a9cfc3255d789, type: 2}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: inventoryUI
       value: 
       objectReference: {fileID: 1674863447}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: starter_Shovel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5035371791158722997, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -665,6 +693,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: options
+      value: 
+      objectReference: {fileID: 675881825}
+    - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: pauseCanvas
       value: 
       objectReference: {fileID: 675881825}
     - target: {fileID: 5035371791158723000, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
@@ -998,7 +1030,7 @@ GameObject:
   - component: {fileID: 675881827}
   - component: {fileID: 675881826}
   m_Layer: 5
-  m_Name: OptionsUI
+  m_Name: PauseUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1095,6 +1127,7 @@ GameObject:
   m_Component:
   - component: {fileID: 717164242}
   - component: {fileID: 717164241}
+  - component: {fileID: 717164243}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1128,6 +1161,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &717164243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717164240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 582a94d5646b4394fbeb8a17ae91af86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 393195452}
 --- !u!1 &757128937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1644,7 +1690,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f4bccbe7e4af34cb20e0b890477420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showFPS: 0
+  seed: 0
+  showFPS: 1
   frames: {fileID: 850824143}
   worldTilesMap: {fileID: 0}
   lightShader: {fileID: 2100000, guid: 255723586a0392743ba69d78843593df, type: 2}
@@ -1655,8 +1702,8 @@ MonoBehaviour:
   player: {fileID: 393195452}
   mainCam: {fileID: 1812268414}
   tileDrop: {fileID: 8294638762010273122, guid: 1c6f28cef5356b1409021471721a6085, type: 3}
+  pauseGameplay: {fileID: 717164243}
   tileAtlas: {fileID: 11400000, guid: 42071fcab0b286b4a8f199909174df61, type: 2}
-  seed: 0
   biomes:
   - biomeName: Snow
     biomeCol: {r: 1, g: 1, b: 1, a: 1}
@@ -1790,7 +1837,7 @@ MonoBehaviour:
       size: 0
       maxSpawnHeight: 0
       distributionTexture: {fileID: 0}
-  biomeFreq: 0.0001
+  biomeFreq: 0.01
   biomeGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1801,9 +1848,9 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 6554
-    ctime1: 9796
-    ctime2: 17164
+    ctime0: 9830
+    ctime1: 50693
+    ctime2: 55705
     ctime3: 65535
     ctime4: 65535
     ctime5: 0
@@ -3633,7 +3680,7 @@ GameObject:
   - component: {fileID: 2118631059}
   - component: {fileID: 2118631058}
   m_Layer: 5
-  m_Name: OptionsBackdrop
+  m_Name: PauseUIBackdrop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
