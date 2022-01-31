@@ -44,7 +44,7 @@ public class WorldGen : MonoBehaviour
     public int removeChunkRender = 16;
     public int worldSize = 128;
     public int heightAdd = 64;
-    public bool caveGen = true;
+    //public bool caveGen = true;
 
     [Header("Noise Settings")]
     public float caveFreq = .05f;
@@ -303,7 +303,7 @@ public class WorldGen : MonoBehaviour
                     //set bottom layer to bedrock
                     tileClass = tileAtlas.bedrock;
 
-                if(caveGen && y > 0)
+                if(curBiome.caveGen && y > 0)
                 {
                     if(caveNoiseTexture.GetPixel(x, y).r > .5f)
                         PlaceTile(tileClass, x, y, true);

@@ -841,8 +841,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -155.88452, y: -83.13843}
-  m_SizeDelta: {x: 100, y: 40}
+  m_AnchoredPosition: {x: -107.553406, y: -64.54953}
+  m_SizeDelta: {x: 53.4933, y: 22.1128}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &632650303
 GameObject:
@@ -1644,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f4bccbe7e4af34cb20e0b890477420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showFPS: 1
+  showFPS: 0
   frames: {fileID: 850824143}
   worldTilesMap: {fileID: 0}
   lightShader: {fileID: 2100000, guid: 255723586a0392743ba69d78843593df, type: 2}
@@ -1662,7 +1662,7 @@ MonoBehaviour:
     biomeCol: {r: 1, g: 1, b: 1, a: 1}
     tileAtlas: {fileID: 11400000, guid: 52454bbd945514046ad7916f5fc2ec0d, type: 2}
     caveNoiseTexture: {fileID: 0}
-    caveGen: 0
+    caveGen: 1
     dirtHeight: 5
     surfaceVal: 0.4
     heightMultiplier: 35
@@ -1695,7 +1695,7 @@ MonoBehaviour:
     biomeCol: {r: 0, g: 0.8784314, b: 0, a: 1}
     tileAtlas: {fileID: 11400000, guid: 9d06ff3f400369a49b63e3b366f20aa9, type: 2}
     caveNoiseTexture: {fileID: 0}
-    caveGen: 0
+    caveGen: 1
     dirtHeight: 5
     surfaceVal: 0.3
     heightMultiplier: 25
@@ -1790,7 +1790,7 @@ MonoBehaviour:
       size: 0
       maxSpawnHeight: 0
       distributionTexture: {fileID: 0}
-  biomeFreq: 0.01
+  biomeFreq: 0.0001
   biomeGradient:
     serializedVersion: 2
     key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1801,9 +1801,9 @@ MonoBehaviour:
     key5: {r: 0, g: 0, b: 0, a: 0}
     key6: {r: 0, g: 0, b: 0, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 1542
-    ctime1: 3084
-    ctime2: 4626
+    ctime0: 6554
+    ctime1: 9796
+    ctime2: 17164
     ctime3: 65535
     ctime4: 65535
     ctime5: 0
@@ -1825,7 +1825,6 @@ MonoBehaviour:
   removeChunkRender: 16
   worldSize: 128
   heightAdd: 64
-  caveGen: 1
   caveFreq: 0.06
   terrainFreq: 0.02
   caveNoiseTexture: {fileID: 0}

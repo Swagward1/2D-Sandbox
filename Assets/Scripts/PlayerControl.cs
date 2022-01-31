@@ -19,9 +19,10 @@ public class PlayerControl : MonoBehaviour
     public int playerReach;
     public Vector2Int mousePos;
 
-    public float movementSpeed = 2.5f;
-    public float jumpForce = 2.5f;
+    public float movementSpeed = 4f;
+    public float jumpForce = 10f;
     public bool onGround;
+    public bool isRunning = false;
 
     private Rigidbody2D rb2;
     private Animator anim;
@@ -52,7 +53,12 @@ public class PlayerControl : MonoBehaviour
         float jump = Input.GetAxisRaw("Jump");
         float vertical = Input.GetAxisRaw("Vertical");
 
-        Vector2 movement = new Vector2(horizontal * movementSpeed, rb2.velocity.y); //error
+        Vector2 movement = new Vector2(horizontal * movementSpeed, rb2.velocity.y); //gay shit
+
+        if(isRunning)
+            movementSpeed = 8f;
+        else
+            movementSpeed = 4f;
 
         //flip player on rotation
         if(horizontal > 0)
@@ -104,6 +110,11 @@ public class PlayerControl : MonoBehaviour
                 selectedSlotIndex -= 1;
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.LeftShift) && horizontal != 0)
+            isRunning = true;
+        if(Input.GetKeyUp(KeyCode.LeftShift) /*&& horizontal == 0*/)
+            isRunning = false;
 
         //set selected slot in hotbar UI
         hotBarSelector.transform.position = inventory.hotbarUISlots[selectedSlotIndex].transform.position;
@@ -175,6 +186,8 @@ public class PlayerControl : MonoBehaviour
         anim.SetFloat("horizontal", horizontal);
         anim.SetBool("hit", hit || place);
 
+        
+
         OptionsMenu();
     }
 
@@ -200,11 +213,11 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    /*private void OnValidate()
+    private void OnValidate()
     {
         Debug.DrawRay(transform.position - (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from knees
         Debug.DrawRay(transform.position + (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from head
-    }*/
+    }
 
     public bool FootRaycast()
     {
@@ -217,5 +230,4 @@ public class PlayerControl : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
         return hit;
     }
-
 }
