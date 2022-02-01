@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class WorldGen : MonoBehaviour
 {
-
     #region Project Vars
     [Header("Leave seed empty to randomise it.")]
     public float seed;
@@ -351,7 +350,6 @@ public class WorldGen : MonoBehaviour
             }
 
         }
-
         worldTilesMap.Apply();
     }
 

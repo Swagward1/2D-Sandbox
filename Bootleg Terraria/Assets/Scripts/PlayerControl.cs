@@ -114,7 +114,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) && horizontal != 0)
+        if(Input.GetKeyDown(KeyCode.LeftShift) /*&& horizontal != 0*/)
             isRunning = true;
         if(Input.GetKeyUp(KeyCode.LeftShift) /*&& horizontal == 0*/)
             isRunning = false;
