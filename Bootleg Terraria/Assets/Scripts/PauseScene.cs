@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PauseScene : MonoBehaviour
 {
+    [HideInInspector]
     public PlayerControl player;
 
     public void Pause()

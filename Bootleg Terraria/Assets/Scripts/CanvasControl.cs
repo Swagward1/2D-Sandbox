@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 https://www.youtube.com/watch?v=05OfmBIf5os
 Unity video demonstrating how button OnClick functions work.*/
 
-public class SceneController : MonoBehaviour
+public class CanvasControl : MonoBehaviour
 {
     public void LoadScene(string sceneName)
     {

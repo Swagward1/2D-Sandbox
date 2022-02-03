@@ -13,6 +13,12 @@ public class FPSDisplay : MonoBehaviour
 
     public void Update ()
     {
+        if(Time.timeScale == 1)
+            CalcFPS();
+    }
+
+    public void CalcFPS()
+    {
         float current = 0;
         current = Time.frameCount / Time.time;
         avgFrameRate = (int)current;

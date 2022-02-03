@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     public Inventory inventory;
     public ItemClass selectedItem;
     public WorldGen terrainGenerator;
+    public ButtonControl bcontrol;
     
     public int playerReach;
     public Vector2Int mousePos;
@@ -76,11 +77,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         //autojump
-        if(FootRaycast() && !HeadRaycast() && movement.x != 0)
-        {
-            if(onGround)
-                movement.y = jumpForce * .75f; //autojump multiplier
-        }
+        TriggerAutoJump();
 
         rb2.velocity = movement;
     }
@@ -217,16 +214,17 @@ public class PlayerControl : MonoBehaviour
             {
                 pauseMenuShowing = !pauseMenuShowing;
                 pauseCanvas.SetActive(false);
+                bcontrol.OptionsScreen.SetActive(false);
                 inventory.hotbarUI.SetActive(true);
             }
         }
     }
 
-    private void OnValidate()
+    /*private void OnValidate()
     {
         Debug.DrawRay(transform.position - (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from knees
         Debug.DrawRay(transform.position + (Vector3.up * .5f), -Vector2.right, Color.white, 10f); //draw ray from head
-    }
+    }*/
 
     public bool FootRaycast()
     {
@@ -238,5 +236,24 @@ public class PlayerControl : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
         return hit;
+    }
+
+    public void TriggerAutoJump()
+    {
+        Vector2 movement = new Vector2(horizontal * movementSpeed, rb2.velocity.y); //gay shit
+
+        //if(!bcontrol.autoJumpEnabled)
+        //{
+        //    return;
+        //}
+        
+        //else
+        //{
+            if(FootRaycast() && !HeadRaycast() && movement.x != 0)
+            {
+                if(onGround)
+                    movement.y = jumpForce * .75f; //autojump multiplier
+            }
+        //}
     }
 }

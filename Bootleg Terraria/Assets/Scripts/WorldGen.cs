@@ -712,21 +712,4 @@ public class WorldGen : MonoBehaviour
         worldTilesMap.Apply();
         unlitBlocks.Add(new Vector2Int(x, y));
     }
-
-    /*public void GamePause()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            if(player.inventoryShowing == false)
-            {
-                if(Time.timeScale == 1)
-                    Time.timeScale = 0;
-                    //Debug.Log("Paused");
-
-                else if(Time.timeScale == 0)
-                    Time.timeScale = 1;
-                    //Debug.Log("Unpaused");
-            }
-        }
-    }*/
 }
