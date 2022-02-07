@@ -581,8 +581,8 @@ MonoBehaviour:
   hotBarSelector: {fileID: 0}
   heldItem: {fileID: 974129351}
   inventoryShowing: 0
-  optionsMenuShowing: 0
-  options: {fileID: 0}
+  pauseMenuShowing: 0
+  pauseCanvas: {fileID: 0}
   inventory: {fileID: 0}
   selectedItem:
     itemType: 0
@@ -598,6 +598,7 @@ MonoBehaviour:
   movementSpeed: 4
   jumpForce: 10
   onGround: 0
+  isRunning: 0
   horizontal: 0
   hit: 0
   place: 0
@@ -633,10 +634,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1085416983c1a54e84e4e47628e9212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starter_Pickaxe: {fileID: 11400000, guid: 20544c08022d7a744989f59064330065, type: 2}
-  starter_Axe: {fileID: 11400000, guid: b77d5515032469247822c2b4b6a03ab0, type: 2}
-  starter_Shovel: {fileID: 11400000, guid: 871b26ab11120b749ba09356b2422613, type: 2}
-  starter_Hammer: {fileID: 11400000, guid: 065fa31de975f9443b9784b65695de8a, type: 2}
+  pickaxe: {fileID: 11400000, guid: 20544c08022d7a744989f59064330065, type: 2}
+  axe: {fileID: 11400000, guid: b77d5515032469247822c2b4b6a03ab0, type: 2}
+  hammer: {fileID: 11400000, guid: 065fa31de975f9443b9784b65695de8a, type: 2}
+  woodPlanks: {fileID: 11400000, guid: dc962cfef70195f4f85a9cfc3255d789, type: 2}
+  stone: {fileID: 11400000, guid: 7993b61a148d3984f99b4ff67e37f737, type: 2}
+  woodBackground: {fileID: 11400000, guid: df5043c26e3d45742ba851e7eba060d4, type: 2}
+  stoneBackground: {fileID: 11400000, guid: 3dc35095f6c62da41bb4d3f95cd2c7de, type: 2}
   inventoryOffset: {x: -165, y: -90}
   hotbarOffset: {x: -165, y: 30}
   multiplier: {x: 55, y: 55}
@@ -645,7 +649,7 @@ MonoBehaviour:
   inventorySlotPrefab: {fileID: 6123280268520923695, guid: 0b18e200985e6924bbf27090779a3d65, type: 3}
   inventoryWidth: 7
   inventoryHeight: 4
-  stackLimit: 64
+  stackLimit: 75
   hotbarUISlots: []
 --- !u!1 &5035371791723005790
 GameObject:

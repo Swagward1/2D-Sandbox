@@ -8,7 +8,12 @@ public class Inventory : MonoBehaviour
     public ToolClass axe;
     //public ToolClass shovel;
     public ToolClass hammer;
+    
+    [Header("Blocks")]
     public TileClass woodPlanks;
+    public TileClass stone;
+    public TileClass woodBackground;
+    public TileClass stoneBackground;
     
     [Header("Inventory Positioning")]
     public Vector2 inventoryOffset;
@@ -46,6 +51,10 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < 75; i++)
         {
             Add(new ItemClass(woodPlanks)); //give player 75 wood planks on start up
+            Add(new ItemClass(stone));
+            Add(new ItemClass(woodBackground)); 
+            Add(new ItemClass(stoneBackground));
+            
         }
     }
 

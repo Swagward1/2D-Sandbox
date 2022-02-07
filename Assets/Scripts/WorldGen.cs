@@ -22,13 +22,13 @@ public class WorldGen : MonoBehaviour
     List<Vector2Int> unlitBlocks = new List<Vector2Int>();
 
     //Player Configs
-    //[HideInInspector]
+    [HideInInspector]
     public PlayerControl player;
-    //[HideInInspector]
+    [HideInInspector]
     public CamControl mainCam;
-    //[HideInInspector]
+    [HideInInspector]
     public GameObject tileDrop;
-    //[HideInInspector]
+    [HideInInspector]
     public PauseScene pauseGameplay;
 
     [Header("World Stuff")]
@@ -46,7 +46,6 @@ public class WorldGen : MonoBehaviour
     public int removeChunkRender = 16;
     public int worldSize = 128;
     public int heightAdd = 64;
-    //public bool caveGen = true;
 
     [Header("Noise Settings")]
     public float caveFreq = .05f;

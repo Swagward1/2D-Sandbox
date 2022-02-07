@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour
     public Inventory inventory;
     public ItemClass selectedItem;
     public WorldGen terrainGenerator;
-    public ButtonControl bcontrol;
+    //public ButtonControl bcontrol;
     
     public int playerReach;
     public Vector2Int mousePos;
@@ -77,7 +77,11 @@ public class PlayerControl : MonoBehaviour
         }
 
         //autojump
-        TriggerAutoJump();
+        if(FootRaycast() && !HeadRaycast() && movement.x != 0)
+        {
+            if(onGround)
+                movement.y = jumpForce * .75f; //autojump multiplier
+        }
 
         rb2.velocity = movement;
     }
@@ -111,6 +115,13 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
+        //use numbers 1-7 to select hotbar slot
+        for (int number = 0; number <= 7; number++)
+        {
+            if(Input.GetKeyDown(number.ToString()))
+                selectedSlotIndex = (number - 1);
+        }
+
         if(Input.GetKeyDown(KeyCode.LeftShift) /*&& horizontal != 0*/)
             isRunning = true;
         if(Input.GetKeyUp(KeyCode.LeftShift) /*&& horizontal == 0*/)
@@ -133,7 +144,6 @@ public class PlayerControl : MonoBehaviour
         //set selected item
         if(inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1] != null)
             selectedItem = inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1].item;
-
         else
             selectedItem = null;
 
@@ -214,7 +224,7 @@ public class PlayerControl : MonoBehaviour
             {
                 pauseMenuShowing = !pauseMenuShowing;
                 pauseCanvas.SetActive(false);
-                bcontrol.OptionsScreen.SetActive(false);
+                //bcontrol.OptionsScreen.SetActive(false);
                 inventory.hotbarUI.SetActive(true);
             }
         }
@@ -236,24 +246,5 @@ public class PlayerControl : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position + (Vector3.up * .5f), -Vector2.right * transform.localScale.x, 1f, layerMask);
         return hit;
-    }
-
-    public void TriggerAutoJump()
-    {
-        Vector2 movement = new Vector2(horizontal * movementSpeed, rb2.velocity.y); //gay shit
-
-        //if(!bcontrol.autoJumpEnabled)
-        //{
-        //    return;
-        //}
-        
-        //else
-        //{
-            if(FootRaycast() && !HeadRaycast() && movement.x != 0)
-            {
-                if(onGround)
-                    movement.y = jumpForce * .75f; //autojump multiplier
-            }
-        //}
     }
 }

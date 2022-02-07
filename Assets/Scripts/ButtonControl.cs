@@ -7,7 +7,7 @@ public class ButtonControl : MonoBehaviour
     public Button yourButton;
     public GameObject fpsMonitor;
     public GameObject OptionsScreen;
-    public bool autoJumpEnabled;
+    //public bool autoJumpEnabled;
     public bool fpsIsShowing;
 
 	void Start () 
@@ -15,10 +15,10 @@ public class ButtonControl : MonoBehaviour
 		Button btn = yourButton.GetComponent<Button>();
 		btn.onClick.AddListener(FPSTaskOnClick);
         btn.onClick.AddListener(OptionsTaskOnClick);
-        btn.onClick.AddListener(AutoJumpOnTaskClick);
+        //btn.onClick.AddListener(AutoJumpOnTaskClick);
         
         fpsIsShowing = false;
-        autoJumpEnabled = true;
+        //autoJumpEnabled = true;
 	}
 
     public void OptionsTaskOnClick()
@@ -45,7 +45,7 @@ public class ButtonControl : MonoBehaviour
         }
 	}
 
-    public void AutoJumpOnTaskClick()
+    /*public void AutoJumpOnTaskClick()
     {
         if(autoJumpEnabled)
         {
@@ -61,5 +61,5 @@ public class ButtonControl : MonoBehaviour
                 autoJumpEnabled = true;
             }
         }
-    }
+    }*/
 }
