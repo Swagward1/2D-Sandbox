@@ -15,7 +15,7 @@ public class PlayerControl : MonoBehaviour
     public Inventory inventory;
     public ItemClass selectedItem;
     public WorldGen terrainGenerator;
-    //public ButtonControl bcontrol;
+    public OptionsPopup opts;
     
     public int playerReach;
     public Vector2Int mousePos;
@@ -211,20 +211,29 @@ public class PlayerControl : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(pauseMenuShowing == false)
+            if(pauseMenuShowing == false && opts.optionsMenuShowing == false)//if both are false
             {
-                if(inventoryShowing == false)
+                if(inventoryShowing == false)//then if inv is false
                 {
+                    //toggle canvas on + hide hotbar
                     pauseMenuShowing = true;
                     pauseCanvas.SetActive(true);
                     inventory.hotbarUI.SetActive(false);
                 }
             }
-            else if(pauseMenuShowing)
+            else if(pauseMenuShowing)//else if pause is true
             {
+                //toggle canvas off + show hotbar
                 pauseMenuShowing = !pauseMenuShowing;
                 pauseCanvas.SetActive(false);
-                //bcontrol.OptionsScreen.SetActive(false);
+                inventory.hotbarUI.SetActive(true);
+            }
+
+            else if(opts.optionsMenuShowing && !pauseMenuShowing) //if options is true + pause is off
+            {
+                //set options false and hotbar true
+                opts.optionsMenuShowing = !opts.optionsMenuShowing;
+                opts.optionsMenu.SetActive(false);
                 inventory.hotbarUI.SetActive(true);
             }
         }

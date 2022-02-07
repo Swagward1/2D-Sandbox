@@ -253,7 +253,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.85}
-  m_Size: {x: 0.44, y: 0.59}
+  m_Size: {x: 0.44, y: 0.33}
   m_Direction: 0
 --- !u!114 &1566074552
 MonoBehaviour:
@@ -593,6 +593,7 @@ MonoBehaviour:
     tile: {fileID: 0}
     tool: {fileID: 0}
   terrainGenerator: {fileID: 0}
+  optionsButton: {fileID: 0}
   playerReach: 5
   mousePos: {x: 0, y: 0}
   movementSpeed: 4
