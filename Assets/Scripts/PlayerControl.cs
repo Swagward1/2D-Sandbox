@@ -16,7 +16,7 @@ public class PlayerControl : MonoBehaviour
     public ItemClass selectedItem;
     public WorldGen terrainGenerator;
     public OptionsPopup opts;
-    
+
     public int playerReach;
     public Vector2Int mousePos;
 
@@ -57,29 +57,29 @@ public class PlayerControl : MonoBehaviour
 
         Vector2 movement = new Vector2(horizontal * movementSpeed, rb2.velocity.y); //gay shit
 
-        if(isRunning)
+        if (isRunning)
             movementSpeed = 8f;
         else
             movementSpeed = 4f;
 
         //flip player on rotation
-        if(horizontal > 0)
+        if (horizontal > 0)
             transform.localScale = new Vector3(-1, 1, 1);
 
-        else if(horizontal < 0)
+        else if (horizontal < 0)
             transform.localScale = new Vector3(1, 1, 1);
 
         //jumping
-        if(vertical > .1f || jump > .1f)
+        if (vertical > .1f || jump > .1f)
         {
-            if(onGround)
-                movement.y = jumpForce; 
+            if (onGround)
+                movement.y = jumpForce;
         }
 
         //autojump
-        if(FootRaycast() && !HeadRaycast() && movement.x != 0)
+        if (FootRaycast() && !HeadRaycast() && movement.x != 0)
         {
-            if(onGround)
+            if (onGround)
                 movement.y = jumpForce * .75f; //autojump multiplier
         }
 
@@ -88,7 +88,8 @@ public class PlayerControl : MonoBehaviour
 
     private void Update()
     {
-        //TileClass tileClass;
+        TileClass tile = terrainGenerator.GetTileFromWorld(mousePos.x, mousePos.y);
+        //Debug.Log(tile.tileName);
 
         horizontal = Input.GetAxis("Horizontal");
 
@@ -96,43 +97,43 @@ public class PlayerControl : MonoBehaviour
         place = Input.GetMouseButtonDown(1);
 
         //scrolls through hotbar slots
-        if(Input.GetAxis("Mouse ScrollWheel") < 0)
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)
         {
-            if(Time.timeScale == 1)
+            if (Time.timeScale == 1)
             {
                 //increase but dont go over the limit
-                if(selectedSlotIndex < inventory.inventoryWidth - 1)
+                if (selectedSlotIndex < inventory.inventoryWidth - 1)
                     selectedSlotIndex += 1;
             }
         }
-        else if(Input.GetAxis("Mouse ScrollWheel") > 0)
+        else if (Input.GetAxis("Mouse ScrollWheel") > 0)
         {
-            if(Time.timeScale == 1)
+            if (Time.timeScale == 1)
             {
                 //decrease down to zero
-                if(selectedSlotIndex > 0)
-                selectedSlotIndex -= 1;
+                if (selectedSlotIndex > 0)
+                    selectedSlotIndex -= 1;
             }
         }
 
         //use numbers 1-7 to select hotbar slot
         for (int number = 0; number <= 7; number++)
         {
-            if(Input.GetKeyDown(number.ToString()))
+            if (Input.GetKeyDown(number.ToString()))
                 selectedSlotIndex = (number - 1);
         }
 
-        if(Input.GetKeyDown(KeyCode.LeftShift) /*&& horizontal != 0*/)
+        if (Input.GetKeyDown(KeyCode.LeftShift) /*&& horizontal != 0*/)
             isRunning = true;
-        if(Input.GetKeyUp(KeyCode.LeftShift) /*&& horizontal == 0*/)
+        if (Input.GetKeyUp(KeyCode.LeftShift) /*&& horizontal == 0*/)
             isRunning = false;
 
         //set selected slot in hotbar UI
         hotBarSelector.transform.position = inventory.hotbarUISlots[selectedSlotIndex].transform.position;
-        if(selectedItem != null)
+        if (selectedItem != null)
         {
             heldItem.GetComponent<SpriteRenderer>().sprite = selectedItem.sprite;
-            if(selectedItem.itemType == ItemClass.ItemType.block)
+            if (selectedItem.itemType == ItemClass.ItemType.block)
                 heldItem.transform.localScale = new Vector3(-.5f, .5f, .5f);
 
             else
@@ -142,15 +143,15 @@ public class PlayerControl : MonoBehaviour
             heldItem.GetComponent<SpriteRenderer>().sprite = null;
 
         //set selected item
-        if(inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1] != null)
+        if (inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1] != null)
             selectedItem = inventory.inventorySlots[selectedSlotIndex, inventory.inventoryHeight - 1].item;
         else
             selectedItem = null;
 
         //open inventory
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if(pauseMenuShowing == false)
+            if (pauseMenuShowing == false)
                 inventoryShowing = !inventoryShowing;
         }
 
@@ -159,38 +160,32 @@ public class PlayerControl : MonoBehaviour
         {
             if (place)
             {
-                if(Time.timeScale == 1)
+                if (Time.timeScale == 1)
                 {
                     if (selectedItem != null)
                     {
-                        if(selectedItem.itemName.ToLower().Contains("ingot"))
+                        if (selectedItem.itemName.ToLower().Contains("ingot"))
                             return;
-                        
-                        else if (selectedItem.itemType == ItemClass.ItemType.block)
-                        {
-                            if(Input.GetKeyDown(KeyCode.Tab))
-                            {
-                                //find selected item
-                                //turn it into a wall variant
-                                //place it with correct lighting applied
-                            }
 
-                            if(terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
-                                    inventory.Remove(selectedItem);
-                        }
+                        if (terrainGenerator.CheckTile(selectedItem.tile, mousePos.x, mousePos.y, false))
+                            inventory.Remove(selectedItem);
                     }
                 }
             }
         }
-        
-        if(Vector2.Distance(transform.position, mousePos) <= playerReach)
+
+        if (Vector2.Distance(transform.position, mousePos) <= playerReach)
         {
-            if(hit)
+            if (hit)
             {
-                if(Time.timeScale == 1)
+                if (Time.timeScale == 1)
                 {
-                    //Debug.Log(hit);
-                    terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+                    tile.blockDur--;
+                    Debug.Log(tile.blockDur);
+
+                    if (tile.blockDur == 0)
+                        terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+
 
                 }
             }
@@ -209,11 +204,11 @@ public class PlayerControl : MonoBehaviour
 
     public void PauseScreen()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(pauseMenuShowing == false && opts.optionsMenuShowing == false)//if both are false
+            if (pauseMenuShowing == false && opts.optionsMenuShowing == false)//if both are false
             {
-                if(inventoryShowing == false)//then if inv is false
+                if (inventoryShowing == false)//then if inv is false
                 {
                     //toggle canvas on + hide hotbar
                     pauseMenuShowing = true;
@@ -221,7 +216,7 @@ public class PlayerControl : MonoBehaviour
                     inventory.hotbarUI.SetActive(false);
                 }
             }
-            else if(pauseMenuShowing)//else if pause is true
+            else if (pauseMenuShowing)//else if pause is true
             {
                 //toggle canvas off + show hotbar
                 pauseMenuShowing = !pauseMenuShowing;
@@ -229,7 +224,7 @@ public class PlayerControl : MonoBehaviour
                 inventory.hotbarUI.SetActive(true);
             }
 
-            else if(opts.optionsMenuShowing && !pauseMenuShowing) //if options is true + pause is off
+            else if (opts.optionsMenuShowing && !pauseMenuShowing) //if options is true + pause is off
             {
                 //set options false and hotbar true
                 opts.optionsMenuShowing = !opts.optionsMenuShowing;

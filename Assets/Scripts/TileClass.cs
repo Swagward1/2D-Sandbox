@@ -11,6 +11,7 @@ public class TileClass : ScriptableObject
     public ItemClass.ToolType toolToBreak;
     public bool naturallyPlaced = true;
     public bool isStackable;
+    public int blockDur;
 
     public static TileClass CreateInstance(TileClass tile, bool isNaturallyPlaced)
     {
@@ -20,7 +21,7 @@ public class TileClass : ScriptableObject
         return thisTile;
     }
 
-    public void Init (TileClass tile, bool isNaturallyPlaced)
+    public void Init(TileClass tile, bool isNaturallyPlaced)
     {
         tileName = tile.tileName;
         wallVariant = tile.wallVariant;
@@ -29,5 +30,6 @@ public class TileClass : ScriptableObject
         tileDrop = tile.tileDrop;
         naturallyPlaced = isNaturallyPlaced;
         toolToBreak = tile.toolToBreak;
+        blockDur = tile.blockDur;
     }
 }
