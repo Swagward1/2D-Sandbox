@@ -13,6 +13,16 @@ public class TileClass : ScriptableObject
     public bool isStackable;
     public int blockDur;
 
+    /*public enum MiningTool
+    {
+        wood,
+        stone,
+        iron,
+        gold,
+        diamond
+    };
+    public MiningTool miningTool;*/
+
     public static TileClass CreateInstance(TileClass tile, bool isNaturallyPlaced)
     {
         var thisTile = ScriptableObject.CreateInstance<TileClass>();
@@ -31,5 +41,6 @@ public class TileClass : ScriptableObject
         naturallyPlaced = isNaturallyPlaced;
         toolToBreak = tile.toolToBreak;
         blockDur = tile.blockDur;
+        //miningTool = tile.miningTool;
     }
 }

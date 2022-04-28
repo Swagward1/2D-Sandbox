@@ -21,3 +21,4 @@ MonoBehaviour:
   toolToBreak: 3
   naturallyPlaced: 1
   isStackable: 1
+  blockDur: 3

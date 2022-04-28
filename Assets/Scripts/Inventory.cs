@@ -8,13 +8,13 @@ public class Inventory : MonoBehaviour
     public ToolClass axe;
     //public ToolClass shovel;
     public ToolClass hammer;
-    
+
     [Header("Blocks")]
     public TileClass woodPlanks;
     public TileClass stone;
     public TileClass woodBackground;
     public TileClass stoneBackground;
-    
+
     [Header("Inventory Positioning")]
     public Vector2 inventoryOffset;
     public Vector2 hotbarOffset;
@@ -31,7 +31,7 @@ public class Inventory : MonoBehaviour
     public InventorySlot[,] inventorySlots;
     public InventorySlot[] hotbarSlots;
 
-    public GameObject [,] uiSlots;
+    public GameObject[,] uiSlots;
     public GameObject[] hotbarUISlots;
 
     private void Start()
@@ -48,13 +48,13 @@ public class Inventory : MonoBehaviour
         //Add(new ItemClass(shovel));
         Add(new ItemClass(hammer));
 
-        for (int i = 0; i < 75; i++)
+        for (int i = 0; i < 999; i++)
         {
             Add(new ItemClass(woodPlanks)); //give player 75 wood planks on start up
             Add(new ItemClass(stone));
-            Add(new ItemClass(woodBackground)); 
+            Add(new ItemClass(woodBackground));
             Add(new ItemClass(stoneBackground));
-            
+
         }
     }
 
@@ -66,7 +66,7 @@ public class Inventory : MonoBehaviour
             for (int y = 0; y < inventoryHeight; y++)
             {
                 GameObject inventorySlot = Instantiate(inventorySlotPrefab, inventoryUI.transform.GetChild(0).transform);
-                inventorySlot.GetComponent<RectTransform>().localPosition = new  Vector3((x * multiplier.x) + inventoryOffset.x, (y * multiplier.y) + inventoryOffset.y);
+                inventorySlot.GetComponent<RectTransform>().localPosition = new Vector3((x * multiplier.x) + inventoryOffset.x, (y * multiplier.y) + inventoryOffset.y);
                 uiSlots[x, y] = inventorySlot;
                 inventorySlots[x, y] = null;
             }
@@ -76,7 +76,7 @@ public class Inventory : MonoBehaviour
         for (int x = 0; x < inventoryWidth; x++)
         {
             GameObject hotbarSlot = Instantiate(inventorySlotPrefab, hotbarUI.transform.GetChild(0).transform);
-            hotbarSlot.GetComponent<RectTransform>().localPosition = new  Vector3((x * multiplier.x) + hotbarOffset.x, hotbarOffset.y);
+            hotbarSlot.GetComponent<RectTransform>().localPosition = new Vector3((x * multiplier.x) + hotbarOffset.x, hotbarOffset.y);
             hotbarUISlots[x] = hotbarSlot;
             hotbarSlots[x] = null;
         }
@@ -102,14 +102,14 @@ public class Inventory : MonoBehaviour
                 {
                     uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().enabled = true;
                     uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().sprite = inventorySlots[x, y].item.sprite;
-                    
-                    if(inventorySlots[x, y].item.itemType == ItemClass.ItemType.block)
+
+                    if (inventorySlots[x, y].item.itemType == ItemClass.ItemType.block)
                     {
-                        if(inventorySlots[x, y].item.tile.inBackdrop)
+                        if (inventorySlots[x, y].item.tile.inBackdrop)
                             uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().color = new Color(.5f, .5f, .5f);
 
                         else
-                            uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().color = Color.white; 
+                            uiSlots[x, y].transform.GetChild(0).GetComponent<Image>().color = Color.white;
                     }
 
                     uiSlots[x, y].transform.GetChild(1).GetComponent<Text>().text = inventorySlots[x, y].quantity.ToString();
@@ -131,17 +131,17 @@ public class Inventory : MonoBehaviour
             }
             else
             {
-                hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().enabled = true;                    
+                hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().enabled = true;
                 hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().sprite = inventorySlots[x, inventoryHeight - 1].item.sprite;
 
-                if(inventorySlots[x, inventoryHeight - 1].item.itemType == ItemClass.ItemType.block)
-                    {
-                        if(inventorySlots[x, inventoryHeight - 1].item.tile.inBackdrop)
-                            hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().color = new Color(.5f, .5f, .5f);
+                if (inventorySlots[x, inventoryHeight - 1].item.itemType == ItemClass.ItemType.block)
+                {
+                    if (inventorySlots[x, inventoryHeight - 1].item.tile.inBackdrop)
+                        hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().color = new Color(.5f, .5f, .5f);
 
-                        else
-                            hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().color = Color.white; 
-                    }
+                    else
+                        hotbarUISlots[x].transform.GetChild(0).GetComponent<Image>().color = Color.white;
+                }
 
                 hotbarUISlots[x].transform.GetChild(1).GetComponent<Text>().text = inventorySlots[x, inventoryHeight - 1].quantity.ToString();
                 hotbarUISlots[x].transform.GetChild(1).GetComponent<Text>().enabled = true;
@@ -158,9 +158,9 @@ public class Inventory : MonoBehaviour
         {
             inventorySlots[itemPos.x, itemPos.y].quantity += 1;
             added = true;
-        } 
-        
-        if(!added)
+        }
+
+        if (!added)
         {
             for (int y = inventoryHeight - 1; y >= 0; y--)
             {
@@ -172,14 +172,14 @@ public class Inventory : MonoBehaviour
                     if (inventorySlots[x, y] == null)
                     {
                         //this slot is empty
-                        inventorySlots[x, y] = new InventorySlot { item = item, position = new Vector2Int(x, y), quantity = 1};
+                        inventorySlots[x, y] = new InventorySlot { item = item, position = new Vector2Int(x, y), quantity = 1 };
                         added = true;
                         break;
                     }
                 }
             }
         }
-        
+
         UpdateInventoryUI();
         return added;
     }
@@ -191,11 +191,11 @@ public class Inventory : MonoBehaviour
 
             for (int x = 0; x < inventoryWidth; x++)
             {
-                if(inventorySlots[x, y] != null)
+                if (inventorySlots[x, y] != null)
                 {
                     if (inventorySlots[x, y].item.itemName == item.itemName)
                     {
-                        if(item.isStackable && inventorySlots[x, y].quantity < stackLimit)
+                        if (item.isStackable && inventorySlots[x, y].quantity < stackLimit)
                             return new Vector2Int(x, y);
                     }
                 }
@@ -208,20 +208,20 @@ public class Inventory : MonoBehaviour
     public bool Remove(ItemClass item)
     {
         //subtract item from inventory
-        for(int y = inventoryHeight - 1; y >= 0; y--)
+        for (int y = inventoryHeight - 1; y >= 0; y--)
         {
-            for(int x = 0; x < inventoryWidth; x++)
+            for (int x = 0; x < inventoryWidth; x++)
             {
-                if(inventorySlots[x, y] != null)
+                if (inventorySlots[x, y] != null)
                 {
-                    if(inventorySlots[x, y].item.itemName == item.itemName)
+                    if (inventorySlots[x, y].item.itemName == item.itemName)
                     {
                         //this slot is empty
                         inventorySlots[x, y].quantity -= 1;
-                        
-                        if(inventorySlots[x, y].quantity == 0)
+
+                        if (inventorySlots[x, y].quantity == 0)
                             inventorySlots[x, y] = null;
-                    
+
                         UpdateInventoryUI();
                         return true;
                     }

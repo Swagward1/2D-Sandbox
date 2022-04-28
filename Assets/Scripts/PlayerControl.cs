@@ -9,6 +9,7 @@ public class PlayerControl : MonoBehaviour
     public GameObject heldItem;
 
     public bool inventoryShowing = false;
+    public bool hotbarShowing = true;
     public bool pauseMenuShowing = false;
     public GameObject pauseCanvas;
 
@@ -152,7 +153,10 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (pauseMenuShowing == false)
+            {
                 inventoryShowing = !inventoryShowing;
+                hotbarShowing = !hotbarShowing;
+            }
         }
 
         if (Vector2.Distance(transform.position, mousePos) <= playerReach &&
@@ -180,13 +184,19 @@ public class PlayerControl : MonoBehaviour
             {
                 if (Time.timeScale == 1)
                 {
-                    tile.blockDur--;
-                    Debug.Log(tile.blockDur);
+                    //print(tile.tileName);
+                    if (selectedItem.itemType == ItemClass.ItemType.tool)
+                    {
+                        if (tile.toolToBreak == selectedItem.toolType) //error here
+                        {
 
-                    if (tile.blockDur == 0)
-                        terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+                            tile.blockDur--;
+                            Debug.Log(tile.blockDur + " " + tile.tileName);
 
-
+                            if (tile.blockDur == 0)
+                                terrainGenerator.RemoveTileWithTool(mousePos.x, mousePos.y, selectedItem);
+                        }
+                    }
                 }
             }
         }
@@ -195,6 +205,7 @@ public class PlayerControl : MonoBehaviour
         mousePos.y = Mathf.RoundToInt(Camera.main.ScreenToWorldPoint(Input.mousePosition).y - .5f);
 
         inventory.inventoryUI.SetActive(inventoryShowing);
+        inventory.hotbarUI.SetActive(hotbarShowing);
 
         anim.SetFloat("horizontal", horizontal);
         anim.SetBool("hit", hit || place);

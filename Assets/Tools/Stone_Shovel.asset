@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35297bd331a011b4eb89443510d077b4, type: 3}
   m_Name: Stone_Shovel
   m_EditorClassIdentifier: 
+  toolTier: 1
   toolName: 
-  sprite: {fileID: 21300000, guid: 78a82d9717dafa644b20e443afc89b8b, type: 3}
+  sprite: {fileID: 21300000, guid: ad93932357979ce478ad99f0ef99e9ec, type: 3}
   toolType: 2

@@ -777,9 +777,29 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2010844557}
     - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: stackLimit
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: inventoryUI
       value: 
       objectReference: {fileID: 1674863447}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: hotbarOffset.x
+      value: -165
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: inventoryWidth
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: inventoryOffset.x
+      value: -165
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677940359697438783, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
+      propertyPath: inventoryOffset.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5035371791158722997, guid: 3c8e9b6fffb1b224088cf4afe0f04896, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2744,7 +2764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1298882415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2797,7 +2817,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Inventory
+  m_Text: '
 
 '
 --- !u!222 &1298882417
@@ -2975,7 +2995,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 10}
+  m_AnchoredPosition: {x: -258.7, y: 454}
   m_SizeDelta: {x: 392, y: 60}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1416049480
@@ -2991,7 +3011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.18431373}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3562,7 +3582,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1674863448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3968,7 +3988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1903890065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4021,7 +4041,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'E' to return to world
+  m_Text: '
+
+'
 --- !u!222 &1903890067
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4238,7 +4260,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021523100}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -4249,7 +4271,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 20}
+  m_AnchoredPosition: {x: -258.59998, y: 29.00001}
   m_SizeDelta: {x: 500, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2021523102
@@ -4265,7 +4287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.22745098, g: 0.57254905, b: 0.98039216, a: 0.6117647}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4386,7 +4408,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -166.1, y: 39.9}
+  m_AnchoredPosition: {x: -424, y: 483.89996}
   m_SizeDelta: {x: 55.1, y: 55.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4609189121700136351

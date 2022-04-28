@@ -333,7 +333,7 @@ public class WorldGen : MonoBehaviour
                                 CreateForestTree(Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1);
 
                             else
-                                CreateSmallTree(Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1);
+                                CreatePenileOrgan(Random.Range(curBiome.smallTree, curBiome.largeTree), x, y + 1);
                     }
                     else
                     {
@@ -359,6 +359,17 @@ public class WorldGen : MonoBehaviour
         {
             //decide a random height for the cacti
             PlaceTile(atlas.log, x, y + i, true);
+        }
+    }
+
+    void CreatePenileOrgan(int ranDickHeight, int x, int y)
+    {
+        PlaceTile(tileAtlas.bedrock, x - 1, y, true);
+        PlaceTile(tileAtlas.bedrock, x + 1, y, true); //ball placement
+
+        for (int i = 0; i < ranDickHeight; i++)
+        {
+            PlaceTile(tileAtlas.bedrock, x, y + i, true);
         }
     }
 
